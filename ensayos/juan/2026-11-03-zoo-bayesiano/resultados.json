@@ -1,0 +1,375 @@
+{
+  "dispositivo": "cuda",
+  "referencia": {
+    "mod_h1": 2161.37,
+    "mod_h2": 2285.44,
+    "post_h1": 2761.36,
+    "post_h2": 2490.04
+  },
+  "optuna": {
+    "tau": 12.39,
+    "mezcla_costa": 0.5996,
+    "umbral_par": 1.8324,
+    "umbral_mega": 5.7021,
+    "tope_q4": 1.0824
+  },
+  "decaimiento": {
+    "mod_h1": 2159.49,
+    "mod_h2": 2283.22,
+    "post_h1": 2758.07,
+    "post_h2": 2486.15
+  },
+  "pesos_q1": {
+    "decaimiento": 1.0,
+    "ridge": 0.0,
+    "lightgbm": 0.0,
+    "xgboost": 0.0,
+    "mlp": 0.0,
+    "rnn": 0.0,
+    "lstm": 0.0,
+    "gru": 0.0,
+    "tcn": 0.0
+  },
+  "pesos_q2": {
+    "decaimiento": 1.0,
+    "ridge": 0.0,
+    "lightgbm": 0.0,
+    "xgboost": 0.0,
+    "mlp": 0.0,
+    "rnn": 0.0,
+    "lstm": 0.0,
+    "gru": 0.0,
+    "tcn": 0.0
+  },
+  "pesos_h2": {
+    "decaimiento": 1.0,
+    "ridge": 0.0,
+    "lightgbm": 0.0,
+    "xgboost": 0.0,
+    "mlp": 0.0,
+    "rnn": 0.0,
+    "lstm": 0.0,
+    "gru": 0.0,
+    "tcn": 0.0
+  },
+  "mezcla": {
+    "mod_h1": 2159.49,
+    "mod_h2": 2283.22,
+    "post_h1": 2758.07,
+    "post_h2": 2486.15
+  },
+  "alpha_h2": 0.8222,
+  "comparacion": [
+    {
+      "modelo": "decaimiento",
+      "mod_h1": 2159.5,
+      "mod_h2": 2283.2,
+      "post_h1": 2758.1,
+      "post_h2": 2486.1
+    },
+    {
+      "modelo": "ridge",
+      "mod_h1": 2241.2,
+      "mod_h2": 2455.8,
+      "post_h1": 2934.4,
+      "post_h2": 2824.1
+    },
+    {
+      "modelo": "lightgbm",
+      "mod_h1": 2131.2,
+      "mod_h2": 2317.8,
+      "post_h1": 2795.9,
+      "post_h2": 2546.0
+    },
+    {
+      "modelo": "xgboost",
+      "mod_h1": 2187.0,
+      "mod_h2": 2288.8,
+      "post_h1": 2833.9,
+      "post_h2": 2498.8
+    },
+    {
+      "modelo": "mlp",
+      "mod_h1": 2258.0,
+      "mod_h2": 2367.9,
+      "post_h1": 2921.9,
+      "post_h2": 2593.0
+    },
+    {
+      "modelo": "rnn",
+      "mod_h1": 2245.3,
+      "mod_h2": 2309.9,
+      "post_h1": 2901.3,
+      "post_h2": 2520.2
+    },
+    {
+      "modelo": "lstm",
+      "mod_h1": 2223.1,
+      "mod_h2": 2305.3,
+      "post_h1": 2866.2,
+      "post_h2": 2509.8
+    },
+    {
+      "modelo": "gru",
+      "mod_h1": 2249.7,
+      "mod_h2": 2315.7,
+      "post_h1": 2910.4,
+      "post_h2": 2528.4
+    },
+    {
+      "modelo": "tcn",
+      "mod_h1": 2253.0,
+      "mod_h2": 2332.1,
+      "post_h1": 2927.6,
+      "post_h2": 2558.6
+    }
+  ],
+  "anios": [
+    {
+      "anio": 2014,
+      "h1": 1418.9,
+      "h2": 2067.6
+    },
+    {
+      "anio": 2015,
+      "h1": 2647.2,
+      "h2": 2100.1
+    },
+    {
+      "anio": 2016,
+      "h1": 9742.7,
+      "h2": 8117.5
+    },
+    {
+      "anio": 2017,
+      "h1": 645.7,
+      "h2": 617.1
+    },
+    {
+      "anio": 2018,
+      "h1": 415.6,
+      "h2": 1504.6
+    },
+    {
+      "anio": 2019,
+      "h1": 4886.2,
+      "h2": 7714.1
+    },
+    {
+      "anio": 2020,
+      "h1": 8399.0,
+      "h2": 3326.2
+    },
+    {
+      "anio": 2021,
+      "h1": 568.6,
+      "h2": 3933.7
+    },
+    {
+      "anio": 2022,
+      "h1": 1021.4,
+      "h2": 2433.2
+    },
+    {
+      "anio": 2023,
+      "h1": 5108.6,
+      "h2": 19464.1
+    },
+    {
+      "anio": 2024,
+      "h1": 152277.7,
+      "h2": 65749.4
+    }
+  ],
+  "niveles_h2": [
+    {
+      "departamento": "Bolivar",
+      "p1": 26.3,
+      "p2": 221.9,
+      "dengue": 202.3
+    },
+    {
+      "departamento": "Valle Del Cauca",
+      "p1": 147.2,
+      "p2": 192.9,
+      "dengue": 117.5
+    },
+    {
+      "departamento": "Atlantico",
+      "p1": 50.5,
+      "p2": 164.5,
+      "dengue": 163.1
+    },
+    {
+      "departamento": "Meta",
+      "p1": 77.6,
+      "p2": 129.8,
+      "dengue": 58.8
+    },
+    {
+      "departamento": "Cordoba",
+      "p1": 31.9,
+      "p2": 121.5,
+      "dengue": 99.6
+    },
+    {
+      "departamento": "Tolima",
+      "p1": 66.9,
+      "p2": 121.1,
+      "dengue": 52.1
+    },
+    {
+      "departamento": "Antioquia",
+      "p1": 77.3,
+      "p2": 115.4,
+      "dengue": 36.6
+    },
+    {
+      "departamento": "Norte De Santander",
+      "p1": 78.6,
+      "p2": 103.6,
+      "dengue": 50.1
+    },
+    {
+      "departamento": "Santander",
+      "p1": 201.1,
+      "p2": 99.6,
+      "dengue": 33.3
+    },
+    {
+      "departamento": "Sucre",
+      "p1": 35.2,
+      "p2": 98.3,
+      "dengue": 88.7
+    },
+    {
+      "departamento": "Huila",
+      "p1": 65.5,
+      "p2": 62.4,
+      "dengue": 22.6
+    },
+    {
+      "departamento": "Cesar",
+      "p1": 47.6,
+      "p2": 59.4,
+      "dengue": 59.4
+    },
+    {
+      "departamento": "Cundinamarca",
+      "p1": 25.0,
+      "p2": 46.5,
+      "dengue": 20.3
+    },
+    {
+      "departamento": "Guajira",
+      "p1": 16.7,
+      "p2": 44.6,
+      "dengue": 40.1
+    },
+    {
+      "departamento": "Arauca",
+      "p1": 10.0,
+      "p2": 31.4,
+      "dengue": 12.4
+    },
+    {
+      "departamento": "Magdalena",
+      "p1": 17.1,
+      "p2": 29.2,
+      "dengue": 37.3
+    },
+    {
+      "departamento": "Caqueta",
+      "p1": 11.2,
+      "p2": 28.9,
+      "dengue": 12.8
+    },
+    {
+      "departamento": "Casanare",
+      "p1": 38.8,
+      "p2": 28.4,
+      "dengue": 29.1
+    },
+    {
+      "departamento": "Putumayo",
+      "p1": 18.2,
+      "p2": 17.0,
+      "dengue": 17.0
+    },
+    {
+      "departamento": "Cauca",
+      "p1": 9.7,
+      "p2": 12.2,
+      "dengue": 9.7
+    },
+    {
+      "departamento": "Quindio",
+      "p1": 17.6,
+      "p2": 11.9,
+      "dengue": 2.6
+    },
+    {
+      "departamento": "Choco",
+      "p1": 4.0,
+      "p2": 10.7,
+      "dengue": 8.7
+    },
+    {
+      "departamento": "Narino",
+      "p1": 2.4,
+      "p2": 10.5,
+      "dengue": 9.8
+    },
+    {
+      "departamento": "Amazonas",
+      "p1": 2.4,
+      "p2": 7.5,
+      "dengue": 5.9
+    },
+    {
+      "departamento": "Risaralda",
+      "p1": 8.4,
+      "p2": 7.3,
+      "dengue": 2.3
+    },
+    {
+      "departamento": "Boyaca",
+      "p1": 6.3,
+      "p2": 6.6,
+      "dengue": 4.1
+    },
+    {
+      "departamento": "Guaviare",
+      "p1": 7.1,
+      "p2": 6.2,
+      "dengue": 3.7
+    },
+    {
+      "departamento": "Caldas",
+      "p1": 6.6,
+      "p2": 5.2,
+      "dengue": 2.7
+    },
+    {
+      "departamento": "Vichada",
+      "p1": 2.5,
+      "p2": 3.9,
+      "dengue": 3.8
+    },
+    {
+      "departamento": "Guainia",
+      "p1": 0.9,
+      "p2": 0.8,
+      "dengue": 1.0
+    },
+    {
+      "departamento": "Vaupes",
+      "p1": 0.9,
+      "p2": 0.5,
+      "dengue": 0.1
+    }
+  ],
+  "media": 45.04,
+  "media_h1": 51.12,
+  "media_h2": 38.96
+}

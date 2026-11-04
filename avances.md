@@ -2,9 +2,15 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-03 — Zoo y decaimiento post-pico
+
+`ensayos/juan/2026-11-03-zoo-bayesiano/submission.csv`. Media 45,0 (semestre 1: 51,1; semestre 2: 39,0). Tablero público: 2836,48931. Quedó peor que 2048,50, así que no reemplaza ese envío.
+
+El archivo no lleva zoo: MLP, RNN, LSTM, GRU, TCN, LightGBM, XGBoost y Ridge quedaron en peso cero. Lo que se subió es el decaimiento hacia el piso de años bajos. En el segundo semestre de 2025 eso cortó de más el interior (Antioquia 115 → 37, Valle 193 → 118, Meta 130 → 59, Tolima 121 → 52, Santander 100 → 33). El 92 % de esa distancia al envío de 2048,50 es ortogonal a la recta de los dos envíos anteriores; el backtest solo mejoraba unos 50 puntos de MSE y el corte real fue de unos 1100. El primero del público sigue en 1353,89. El mejor envío público nuestro sigue siendo el de horizontes.
+
 ## 2026-10-31 — Horizontes y bases recientes
 
-`ensayos/juan/2026-10-31-horizonte-bases/submission.csv`. Media 61,9 (semestre 1: 65,8; semestre 2: 58,1). Es el archivo vigente.
+`ensayos/juan/2026-10-31-horizonte-bases/submission.csv`. Media 61,9 (semestre 1: 65,8; semestre 2: 58,1). Fue el segundo envío público. Ya no es el archivo vigente.
 
 Tablero público, equipo Pandebono Predictors: puesto 4, score 2048,49606. El anterior estaba en 3754,91. El tercero va en 2042,42 y el primero en 1808,52.
 
