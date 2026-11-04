@@ -1,0 +1,76 @@
+dispositivo cuda | ventanas 28334 | entrada 10 | futuro 11
+{'familia': 'mlp', 'anio': 2011, 'epocas': 12, 'ventanas': 4061, 'val': nan, 'seg': 2.9, 'mse_red': 1226.706917366097, 'mse_b': 1405.8021808917451}
+{'familia': 'mlp', 'anio': 2012, 'epocas': 12, 'ventanas': 5673, 'val': nan, 'seg': 1.0, 'mse_red': 589.2171009228528, 'mse_b': 929.3833373075172}
+{'familia': 'mlp', 'anio': 2013, 'epocas': 12, 'ventanas': 7316, 'val': nan, 'seg': 1.2, 'mse_red': 5565.149352483204, 'mse_b': 6782.254573561704}
+{'familia': 'mlp', 'anio': 2014, 'epocas': 12, 'ventanas': 8928, 'val': nan, 'seg': 1.5, 'mse_red': 1912.582004289999, 'mse_b': 1418.8961278908123}
+{'familia': 'mlp', 'anio': 2015, 'epocas': 12, 'ventanas': 10540, 'val': nan, 'seg': 1.7, 'mse_red': 2983.883059239588, 'mse_b': 2647.1803150372666}
+{'familia': 'mlp', 'anio': 2016, 'epocas': 12, 'ventanas': 12152, 'val': nan, 'seg': 2.0, 'mse_red': 10416.66626195495, 'mse_b': 9742.666294677048}
+{'familia': 'mlp', 'anio': 2017, 'epocas': 12, 'ventanas': 13764, 'val': nan, 'seg': 2.2, 'mse_red': 1066.7947615942085, 'mse_b': 1120.2214021459838}
+{'familia': 'mlp', 'anio': 2018, 'epocas': 12, 'ventanas': 15376, 'val': nan, 'seg': 2.6, 'mse_red': 398.89739717909663, 'mse_b': 415.56615818485994}
+{'familia': 'mlp', 'anio': 2019, 'epocas': 12, 'ventanas': 17019, 'val': nan, 'seg': 2.8, 'mse_red': 5332.1988156469215, 'mse_b': 4886.156584608681}
+{'familia': 'mlp', 'anio': 2020, 'epocas': 12, 'ventanas': 18631, 'val': nan, 'seg': 3.0, 'mse_red': 7253.82636791959, 'mse_b': 8399.028886112312}
+{'familia': 'mlp', 'anio': 2021, 'epocas': 12, 'ventanas': 20243, 'val': nan, 'seg': 3.3, 'mse_red': 644.7520068320429, 'mse_b': 581.3267801447325}
+{'familia': 'mlp', 'anio': 2022, 'epocas': 12, 'ventanas': 21855, 'val': nan, 'seg': 3.6, 'mse_red': 2048.3970950649446, 'mse_b': 1021.4103998712836}
+{'familia': 'mlp', 'anio': 2023, 'epocas': 12, 'ventanas': 23467, 'val': nan, 'seg': 3.9, 'mse_red': 3890.8583702379583, 'mse_b': 5108.555741053058}
+{'familia': 'mlp', 'anio': 2024, 'epocas': 12, 'ventanas': 25079, 'val': nan, 'seg': 4.3, 'mse_red': 40194.13996637136, 'mse_b': 152277.70478196978}
+{'familia': 'mlp', 'anio': 2025, 'epocas': 12, 'ventanas': 26722, 'val': nan, 'seg': 4.4}
+{'familia': 'rnn', 'anio': 2011, 'epocas': 12, 'ventanas': 4061, 'val': nan, 'seg': 0.8, 'mse_red': 1228.8570566436101, 'mse_b': 1405.8021808917451}
+{'familia': 'rnn', 'anio': 2012, 'epocas': 12, 'ventanas': 5673, 'val': nan, 'seg': 1.1, 'mse_red': 714.6683868192961, 'mse_b': 929.3833373075172}
+{'familia': 'rnn', 'anio': 2013, 'epocas': 12, 'ventanas': 7316, 'val': nan, 'seg': 1.4, 'mse_red': 4673.969618747198, 'mse_b': 6782.254573561704}
+{'familia': 'rnn', 'anio': 2014, 'epocas': 12, 'ventanas': 8928, 'val': nan, 'seg': 1.6, 'mse_red': 6375.82467573827, 'mse_b': 1418.8961278908123}
+{'familia': 'rnn', 'anio': 2015, 'epocas': 12, 'ventanas': 10540, 'val': nan, 'seg': 1.9, 'mse_red': 3145.8778605193947, 'mse_b': 2647.1803150372666}
+{'familia': 'rnn', 'anio': 2016, 'epocas': 12, 'ventanas': 12152, 'val': nan, 'seg': 2.1, 'mse_red': 12003.373069905248, 'mse_b': 9742.666294677048}
+{'familia': 'rnn', 'anio': 2017, 'epocas': 12, 'ventanas': 13764, 'val': nan, 'seg': 2.4, 'mse_red': 3164.0711795681987, 'mse_b': 1120.2214021459838}
+{'familia': 'rnn', 'anio': 2018, 'epocas': 12, 'ventanas': 15376, 'val': nan, 'seg': 3.0, 'mse_red': 526.582986445541, 'mse_b': 415.56615818485994}
+{'familia': 'rnn', 'anio': 2019, 'epocas': 12, 'ventanas': 17019, 'val': nan, 'seg': 3.2, 'mse_red': 5266.1505266611875, 'mse_b': 4886.156584608681}
+{'familia': 'rnn', 'anio': 2020, 'epocas': 12, 'ventanas': 18631, 'val': nan, 'seg': 3.4, 'mse_red': 6704.919973821124, 'mse_b': 8399.028886112312}
+{'familia': 'rnn', 'anio': 2021, 'epocas': 12, 'ventanas': 20243, 'val': nan, 'seg': 3.5, 'mse_red': 608.1129631767077, 'mse_b': 581.3267801447325}
+{'familia': 'rnn', 'anio': 2022, 'epocas': 12, 'ventanas': 21855, 'val': nan, 'seg': 3.7, 'mse_red': 4476.359045922185, 'mse_b': 1021.4103998712836}
+{'familia': 'rnn', 'anio': 2023, 'epocas': 12, 'ventanas': 23467, 'val': nan, 'seg': 4.1, 'mse_red': 4583.218155124932, 'mse_b': 5108.555741053058}
+{'familia': 'rnn', 'anio': 2024, 'epocas': 12, 'ventanas': 25079, 'val': nan, 'seg': 4.4, 'mse_red': 55333.43057853526, 'mse_b': 152277.70478196978}
+{'familia': 'rnn', 'anio': 2025, 'epocas': 12, 'ventanas': 26722, 'val': nan, 'seg': 4.8}
+{'familia': 'lstm', 'anio': 2011, 'epocas': 12, 'ventanas': 4061, 'val': nan, 'seg': 0.7, 'mse_red': 1154.6841721064575, 'mse_b': 1405.8021808917451}
+{'familia': 'lstm', 'anio': 2012, 'epocas': 12, 'ventanas': 5673, 'val': nan, 'seg': 1.1, 'mse_red': 751.6566538048835, 'mse_b': 929.3833373075172}
+{'familia': 'lstm', 'anio': 2013, 'epocas': 12, 'ventanas': 7316, 'val': nan, 'seg': 1.4, 'mse_red': 4868.831955938915, 'mse_b': 6782.254573561704}
+{'familia': 'lstm', 'anio': 2014, 'epocas': 12, 'ventanas': 8928, 'val': nan, 'seg': 1.7, 'mse_red': 8034.162157667687, 'mse_b': 1418.8961278908123}
+{'familia': 'lstm', 'anio': 2015, 'epocas': 12, 'ventanas': 10540, 'val': nan, 'seg': 2.5, 'mse_red': 4871.327761648098, 'mse_b': 2647.1803150372666}
+{'familia': 'lstm', 'anio': 2016, 'epocas': 12, 'ventanas': 12152, 'val': nan, 'seg': 2.6, 'mse_red': 10408.445496559107, 'mse_b': 9742.666294677048}
+{'familia': 'lstm', 'anio': 2017, 'epocas': 12, 'ventanas': 13764, 'val': nan, 'seg': 3.6, 'mse_red': 3476.498606090683, 'mse_b': 1120.2214021459838}
+{'familia': 'lstm', 'anio': 2018, 'epocas': 12, 'ventanas': 15376, 'val': nan, 'seg': 3.5, 'mse_red': 1159.2996042502525, 'mse_b': 415.56615818485994}
+{'familia': 'lstm', 'anio': 2019, 'epocas': 12, 'ventanas': 17019, 'val': nan, 'seg': 3.9, 'mse_red': 5314.2076334828, 'mse_b': 4886.156584608681}
+{'familia': 'lstm', 'anio': 2020, 'epocas': 12, 'ventanas': 18631, 'val': nan, 'seg': 3.8, 'mse_red': 7178.519316082388, 'mse_b': 8399.028886112312}
+{'familia': 'lstm', 'anio': 2021, 'epocas': 12, 'ventanas': 20243, 'val': nan, 'seg': 4.8, 'mse_red': 560.122401389652, 'mse_b': 581.3267801447325}
+{'familia': 'lstm', 'anio': 2022, 'epocas': 12, 'ventanas': 21855, 'val': nan, 'seg': 5.0, 'mse_red': 5571.624598142021, 'mse_b': 1021.4103998712836}
+{'familia': 'lstm', 'anio': 2023, 'epocas': 12, 'ventanas': 23467, 'val': nan, 'seg': 5.1, 'mse_red': 5669.204781072429, 'mse_b': 5108.555741053058}
+{'familia': 'lstm', 'anio': 2024, 'epocas': 12, 'ventanas': 25079, 'val': nan, 'seg': 5.4, 'mse_red': 50955.129118707264, 'mse_b': 152277.70478196978}
+{'familia': 'lstm', 'anio': 2025, 'epocas': 12, 'ventanas': 26722, 'val': nan, 'seg': 5.7}
+{'familia': 'gru', 'anio': 2011, 'epocas': 12, 'ventanas': 4061, 'val': nan, 'seg': 0.8, 'mse_red': 1103.5359665476478, 'mse_b': 1405.8021808917451}
+{'familia': 'gru', 'anio': 2012, 'epocas': 12, 'ventanas': 5673, 'val': nan, 'seg': 1.2, 'mse_red': 691.4020360566818, 'mse_b': 929.3833373075172}
+{'familia': 'gru', 'anio': 2013, 'epocas': 12, 'ventanas': 7316, 'val': nan, 'seg': 1.3, 'mse_red': 4686.838915447285, 'mse_b': 6782.254573561704}
+{'familia': 'gru', 'anio': 2014, 'epocas': 12, 'ventanas': 8928, 'val': nan, 'seg': 1.9, 'mse_red': 6437.62544396467, 'mse_b': 1418.8961278908123}
+{'familia': 'gru', 'anio': 2015, 'epocas': 12, 'ventanas': 10540, 'val': nan, 'seg': 2.2, 'mse_red': 4501.180216640247, 'mse_b': 2647.1803150372666}
+{'familia': 'gru', 'anio': 2016, 'epocas': 12, 'ventanas': 12152, 'val': nan, 'seg': 2.7, 'mse_red': 11100.601505005297, 'mse_b': 9742.666294677048}
+{'familia': 'gru', 'anio': 2017, 'epocas': 12, 'ventanas': 13764, 'val': nan, 'seg': 3.0, 'mse_red': 2080.7032404338743, 'mse_b': 1120.2214021459838}
+{'familia': 'gru', 'anio': 2018, 'epocas': 12, 'ventanas': 15376, 'val': nan, 'seg': 3.5, 'mse_red': 554.8535889502974, 'mse_b': 415.56615818485994}
+{'familia': 'gru', 'anio': 2019, 'epocas': 12, 'ventanas': 17019, 'val': nan, 'seg': 3.8, 'mse_red': 5315.8833752825785, 'mse_b': 4886.156584608681}
+{'familia': 'gru', 'anio': 2020, 'epocas': 12, 'ventanas': 18631, 'val': nan, 'seg': 4.5, 'mse_red': 7860.92650073019, 'mse_b': 8399.028886112312}
+{'familia': 'gru', 'anio': 2021, 'epocas': 12, 'ventanas': 20243, 'val': nan, 'seg': 4.2, 'mse_red': 584.3294984376798, 'mse_b': 581.3267801447325}
+{'familia': 'gru', 'anio': 2022, 'epocas': 12, 'ventanas': 21855, 'val': nan, 'seg': 4.2, 'mse_red': 1932.9187812290663, 'mse_b': 1021.4103998712836}
+{'familia': 'gru', 'anio': 2023, 'epocas': 12, 'ventanas': 23467, 'val': nan, 'seg': 5.0, 'mse_red': 5637.001693492991, 'mse_b': 5108.555741053058}
+{'familia': 'gru', 'anio': 2024, 'epocas': 12, 'ventanas': 25079, 'val': nan, 'seg': 5.4, 'mse_red': 50683.42756746156, 'mse_b': 152277.70478196978}
+{'familia': 'gru', 'anio': 2025, 'epocas': 12, 'ventanas': 26722, 'val': nan, 'seg': 5.1}
+{'familia': 'tcn', 'anio': 2011, 'epocas': 12, 'ventanas': 4061, 'val': nan, 'seg': 1.8, 'mse_red': 743.0058914094283, 'mse_b': 1405.8021808917451}
+{'familia': 'tcn', 'anio': 2012, 'epocas': 12, 'ventanas': 5673, 'val': nan, 'seg': 2.4, 'mse_red': 697.5733550775217, 'mse_b': 929.3833373075172}
+{'familia': 'tcn', 'anio': 2013, 'epocas': 12, 'ventanas': 7316, 'val': nan, 'seg': 3.2, 'mse_red': 4744.519117048685, 'mse_b': 6782.254573561704}
+{'familia': 'tcn', 'anio': 2014, 'epocas': 12, 'ventanas': 8928, 'val': nan, 'seg': 3.9, 'mse_red': 4741.390415025131, 'mse_b': 1418.8961278908123}
+{'familia': 'tcn', 'anio': 2015, 'epocas': 12, 'ventanas': 10540, 'val': nan, 'seg': 4.9, 'mse_red': 2942.5493177259086, 'mse_b': 2647.1803150372666}
+{'familia': 'tcn', 'anio': 2016, 'epocas': 12, 'ventanas': 12152, 'val': nan, 'seg': 5.3, 'mse_red': 9455.61670524479, 'mse_b': 9742.666294677048}
+{'familia': 'tcn', 'anio': 2017, 'epocas': 12, 'ventanas': 13764, 'val': nan, 'seg': 5.7, 'mse_red': 694.872410177229, 'mse_b': 1120.2214021459838}
+{'familia': 'tcn', 'anio': 2018, 'epocas': 12, 'ventanas': 15376, 'val': nan, 'seg': 6.1, 'mse_red': 454.5025429808649, 'mse_b': 415.56615818485994}
+{'familia': 'tcn', 'anio': 2019, 'epocas': 12, 'ventanas': 17019, 'val': nan, 'seg': 7.0, 'mse_red': 5433.508547772642, 'mse_b': 4886.156584608681}
+{'familia': 'tcn', 'anio': 2020, 'epocas': 12, 'ventanas': 18631, 'val': nan, 'seg': 7.7, 'mse_red': 7089.192591946832, 'mse_b': 8399.028886112312}
+{'familia': 'tcn', 'anio': 2021, 'epocas': 12, 'ventanas': 20243, 'val': nan, 'seg': 8.4, 'mse_red': 580.3157149810789, 'mse_b': 581.3267801447325}
+{'familia': 'tcn', 'anio': 2022, 'epocas': 12, 'ventanas': 21855, 'val': nan, 'seg': 8.3, 'mse_red': 1735.2503631295563, 'mse_b': 1021.4103998712836}
+{'familia': 'tcn', 'anio': 2023, 'epocas': 12, 'ventanas': 23467, 'val': nan, 'seg': 9.0, 'mse_red': 4833.374200125266, 'mse_b': 5108.555741053058}
+{'familia': 'tcn', 'anio': 2024, 'epocas': 12, 'ventanas': 25079, 'val': nan, 'seg': 9.6, 'mse_red': 44911.47256819293, 'mse_b': 152277.70478196978}
+{'familia': 'tcn', 'anio': 2025, 'epocas': 12, 'ventanas': 26722, 'val': nan, 'seg': 10.2}

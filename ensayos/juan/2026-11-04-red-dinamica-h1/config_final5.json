@@ -1,0 +1,128 @@
+{
+ "familias": [
+  "mlp",
+  "rnn",
+  "lstm",
+  "gru",
+  "tcn"
+ ],
+ "cli": {
+  "familias": [
+   "mlp",
+   "rnn",
+   "lstm",
+   "gru",
+   "tcn"
+  ],
+  "anios": [
+   2011,
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "semillas": [
+   0,
+   1
+  ],
+  "gamma": null,
+  "etiqueta": "final5",
+  "epocas": 12,
+  "residuo": null,
+  "peso_fin": null,
+  "perfil": "mediana",
+  "salida": null
+ },
+ "configs": {
+  "mlp": {
+   "familia": "mlp",
+   "oculto": 64,
+   "capas": 1,
+   "dropout": 0.2,
+   "lr": 0.001,
+   "wd": 0.0001,
+   "kernel": 3,
+   "cabeza": 32,
+   "gamma": 0.0,
+   "max_epocas": 40,
+   "paciencia": 6,
+   "salida": "compuerta",
+   "residuo": 0.5,
+   "peso_fin": 1.0
+  },
+  "rnn": {
+   "familia": "rnn",
+   "oculto": 32,
+   "capas": 1,
+   "dropout": 0.1,
+   "lr": 0.002,
+   "wd": 0.0001,
+   "kernel": 3,
+   "cabeza": 32,
+   "gamma": 0.0,
+   "max_epocas": 40,
+   "paciencia": 6,
+   "salida": "compuerta",
+   "residuo": 0.5,
+   "peso_fin": 1.0
+  },
+  "lstm": {
+   "familia": "lstm",
+   "oculto": 32,
+   "capas": 1,
+   "dropout": 0.1,
+   "lr": 0.002,
+   "wd": 0.0001,
+   "kernel": 3,
+   "cabeza": 32,
+   "gamma": 0.0,
+   "max_epocas": 40,
+   "paciencia": 6,
+   "salida": "compuerta",
+   "residuo": 0.5,
+   "peso_fin": 1.0
+  },
+  "gru": {
+   "familia": "gru",
+   "oculto": 32,
+   "capas": 1,
+   "dropout": 0.1,
+   "lr": 0.002,
+   "wd": 0.0001,
+   "kernel": 3,
+   "cabeza": 32,
+   "gamma": 0.0,
+   "max_epocas": 40,
+   "paciencia": 6,
+   "salida": "compuerta",
+   "residuo": 0.5,
+   "peso_fin": 1.0
+  },
+  "tcn": {
+   "familia": "tcn",
+   "oculto": 32,
+   "capas": 4,
+   "dropout": 0.1,
+   "lr": 0.001,
+   "wd": 0.0001,
+   "kernel": 3,
+   "cabeza": 32,
+   "gamma": 0.0,
+   "max_epocas": 40,
+   "paciencia": 6,
+   "salida": "compuerta",
+   "residuo": 0.5,
+   "peso_fin": 1.0
+  }
+ }
+}

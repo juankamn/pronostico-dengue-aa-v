@@ -1,0 +1,63 @@
+{
+ "familias": [
+  "tcn",
+  "mlp"
+ ],
+ "cli": {
+  "familias": [
+   "tcn",
+   "mlp"
+  ],
+  "anios": [
+   2025
+  ],
+  "semillas": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "gamma": null,
+  "etiqueta": "final2025",
+  "epocas": 12,
+  "residuo": null,
+  "peso_fin": null,
+  "perfil": "mediana",
+  "salida": null
+ },
+ "configs": {
+  "tcn": {
+   "familia": "tcn",
+   "oculto": 32,
+   "capas": 4,
+   "dropout": 0.1,
+   "lr": 0.001,
+   "wd": 0.0001,
+   "kernel": 3,
+   "cabeza": 32,
+   "gamma": 0.0,
+   "max_epocas": 40,
+   "paciencia": 6,
+   "salida": "compuerta",
+   "residuo": 0.5,
+   "peso_fin": 1.0
+  },
+  "mlp": {
+   "familia": "mlp",
+   "oculto": 64,
+   "capas": 1,
+   "dropout": 0.2,
+   "lr": 0.001,
+   "wd": 0.0001,
+   "kernel": 3,
+   "cabeza": 32,
+   "gamma": 0.0,
+   "max_epocas": 40,
+   "paciencia": 6,
+   "salida": "compuerta",
+   "residuo": 0.5,
+   "peso_fin": 1.0
+  }
+ }
+}
