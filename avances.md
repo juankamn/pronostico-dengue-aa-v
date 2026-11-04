@@ -2,13 +2,19 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-04 — Segundo semestre con redes de 52 semanas
+
+`ensayos/juan/2026-11-04-red-segundo-semestre/`. TCN y MLP con horizonte de 52 semanas. En el segundo semestre, mitad red y mitad B baja el walk-forward de 5164 a 4954 (2014-2023) y gana 5 de 10 años; los pesos por región no ayudan ahí. En el primer semestre estas redes rinden peor que las de 26 semanas, así que el primer semestre no cambia. `submission.csv` deja el primer semestre idéntico a la mezcla por región y solo cambia julio a diciembre: su puntaje público mide si la red lee bien 2025.
+
+Tablero público: 2050,42336, peor que 1971,62. El cambio de la red vale 106 de MSE entre archivos y el público subió 78,8: la realidad se movió apenas un 13 % en la dirección de la red. En 2025 la lectura de las redes no le ganó a B. Con la regla fijada antes de ver el puntaje, la segunda selección final pasa a B con el patrón de reporte (`entrega/submission_bases_patron.csv`, que ahora genera el cuaderno), y la primera sigue siendo la mezcla por región (`entrega/submission_mezcla_region.csv`, 1971,62). La continuidad queda generada pero fuera de las selecciones.
+
 ## 2026-11-04 — Peso de la red por región
 
 El cuaderno de entrega estima el peso de la red (50 % TCN + 50 % MLP) frente a B por separado para la Costa y el interior, solo con años anteriores. Para 2025, con 2011-2023, da 0,69 en el interior y 0,23 en la Costa. En 2016-2023 la mezcla por región da 3651 y la de peso 0,5, 3696; gana 6 de 8 años. En 2014 pierde porque el peso sale de solo tres años de historia.
 
 Archivos nuevos: `entrega/submission_mezcla_region.csv` (primer semestre 71,8; Valle del Cauca 311 en el primer trimestre) y `entrega/submission_continuidad_region.csv` (83,1). Tablero público: 1971,62176 y 1971,62162. El segundo semestre es el mismo de los envíos de 1971,92 salvo julio (hasta 0,69 casos); la mejora de 0,3 viene de ahí y no dice nada del privado. El cuaderno sigue reproduciendo los dos envíos de 1971,92 (diferencia de 0,00002).
 
-En 2016-2023, el par mezcla por región + B habría dado 3616, y el par mezcla por región + continuidad, 3649. En 2025 la mezcla por región queda a 940 de MSE de B con patrón y a 730 de la continuidad. Falta decidir cuál de los dos va como segunda selección.
+En 2016-2023, el par mezcla por región + B habría dado 3616, y el par mezcla por región + continuidad, 3649. En 2025 la mezcla por región queda a 940 de MSE de B con patrón y a 730 de la continuidad. La segunda selección quedó en B con el patrón (ver la entrada de arriba).
 
 ## 2026-11-04 — EDA profundo
 

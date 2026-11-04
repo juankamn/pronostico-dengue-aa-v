@@ -1,0 +1,32 @@
+ventanas 27528 | futuro (52, 11)
+tcn 2011 {'epocas': 12, 'ventanas': 3255, 'val': nan} 4.0 s
+tcn 2012 {'epocas': 12, 'ventanas': 4867, 'val': nan} 2.2 s
+tcn 2013 {'epocas': 12, 'ventanas': 6510, 'val': nan} 2.7 s
+tcn 2014 {'epocas': 12, 'ventanas': 8122, 'val': nan} 3.4 s
+tcn 2015 {'epocas': 12, 'ventanas': 9734, 'val': nan} 4.4 s
+tcn 2016 {'epocas': 12, 'ventanas': 11346, 'val': nan} 6.3 s
+tcn 2017 {'epocas': 12, 'ventanas': 12958, 'val': nan} 6.1 s
+tcn 2018 {'epocas': 12, 'ventanas': 14570, 'val': nan} 7.9 s
+tcn 2019 {'epocas': 12, 'ventanas': 16213, 'val': nan} 8.6 s
+tcn 2020 {'epocas': 12, 'ventanas': 17825, 'val': nan} 8.9 s
+tcn 2021 {'epocas': 12, 'ventanas': 19437, 'val': nan} 10.2 s
+tcn 2022 {'epocas': 12, 'ventanas': 21049, 'val': nan} 10.1 s
+tcn 2023 {'epocas': 12, 'ventanas': 22661, 'val': nan} 11.9 s
+tcn 2024 {'epocas': 12, 'ventanas': 24273, 'val': nan} 10.7 s
+tcn 2025 {'epocas': 12, 'ventanas': 25916, 'val': nan} 25.4 s
+mlp 2011 {'epocas': 12, 'ventanas': 3255, 'val': nan} 0.6 s
+mlp 2012 {'epocas': 12, 'ventanas': 4867, 'val': nan} 0.9 s
+mlp 2013 {'epocas': 12, 'ventanas': 6510, 'val': nan} 1.2 s
+mlp 2014 {'epocas': 12, 'ventanas': 8122, 'val': nan} 1.5 s
+mlp 2015 {'epocas': 12, 'ventanas': 9734, 'val': nan} 1.9 s
+mlp 2016 {'epocas': 12, 'ventanas': 11346, 'val': nan} 2.2 s
+mlp 2017 {'epocas': 12, 'ventanas': 12958, 'val': nan} 2.3 s
+mlp 2018 {'epocas': 12, 'ventanas': 14570, 'val': nan} 2.4 s
+mlp 2019 {'epocas': 12, 'ventanas': 16213, 'val': nan} 2.6 s
+mlp 2020 {'epocas': 12, 'ventanas': 17825, 'val': nan} 3.2 s
+mlp 2021 {'epocas': 12, 'ventanas': 19437, 'val': nan} 3.5 s
+mlp 2022 {'epocas': 12, 'ventanas': 21049, 'val': nan} 3.7 s
+mlp 2023 {'epocas': 12, 'ventanas': 22661, 'val': nan} 3.8 s
+mlp 2024 {'epocas': 12, 'ventanas': 24273, 'val': nan} 4.3 s
+mlp 2025 {'epocas': 12, 'ventanas': 25916, 'val': nan} 10.8 s
+listo 48360
