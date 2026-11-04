@@ -2,6 +2,18 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-04 — Peso de la red por región
+
+El cuaderno de entrega estima el peso de la red (50 % TCN + 50 % MLP) frente a B por separado para la Costa y el interior, solo con años anteriores. Para 2025, con 2011-2023, da 0,69 en el interior y 0,23 en la Costa. En 2016-2023 la mezcla por región da 3651 y la de peso 0,5, 3696; gana 6 de 8 años. En 2014 pierde porque el peso sale de solo tres años de historia.
+
+Archivos nuevos: `entrega/submission_mezcla_region.csv` (primer semestre 71,8; Valle del Cauca 311 en el primer trimestre) y `entrega/submission_continuidad_region.csv` (83,1). Tablero público: 1971,62176 y 1971,62162. El segundo semestre es el mismo de los envíos de 1971,92 salvo julio (hasta 0,69 casos); la mejora de 0,3 viene de ahí y no dice nada del privado. El cuaderno sigue reproduciendo los dos envíos de 1971,92 (diferencia de 0,00002).
+
+En 2016-2023, el par mezcla por región + B habría dado 3616, y el par mezcla por región + continuidad, 3649. En 2025 la mezcla por región queda a 940 de MSE de B con patrón y a 730 de la continuidad. Falta decidir cuál de los dos va como segunda selección.
+
+## 2026-11-04 — EDA profundo
+
+`ensayos/juan/2026-11-04-eda-profundo/eda.ipynb`. Valle del Cauca aporta el 39 % del error de B en el primer semestre, y un tercio del error total es ruido semanal. La Costa baja en el primer semestre y el centro andino sube. El primer trimestre de 2025 fue 1,3 °C más frío que el de 2024, lo que apoya una caída. La mezcla con red gana en el interior y pierde en la Costa; los pesos aprendidos con años anteriores dan para 2025 0,70 en el interior y 0,21 en la Costa.
+
 ## 2026-11-04 — Cuaderno de entrega
 
 `entrega/taller_final_dengue.ipynb` queda con el EDA (más los lotes de reporte y el cierre de 2024), las etapas 1 y 2 como estaban, la etapa 3 (bases por horizonte, que reproduce exacto el envío de 2048,50), la etapa 4 (MLP, RNN, LSTM, GRU y TCN de 26 semanas en walk-forward, con los experimentos de diseño) y una sección 6 nueva. Corre completo en 14 minutos, con 18 figuras, y genera `entrega/submission_mezcla_red.csv` y `entrega/submission_continuidad_red.csv`.
