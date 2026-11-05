@@ -2,6 +2,14 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-05 — Modelo global de árboles y mezcla pública de Jairo
+
+`ensayos/jairo/2026-11-05-modelo-global/`. Modelo global de árboles con clima, calendario, departamento y casos del año anterior: público **5773,16350**. Su validación anual mejora frente a B en 2023 y 2024, pero pierde en H1 de 2022; detalles y limitaciones en `notas.md`.
+
+Mezcla de 8,346443 % del modelo con selección 1 únicamente en H2: `submission_mezcla_publico.csv`, score público **1654,88355**, confirmado en Kaggle. El primer semestre queda igual a selección 1; la mejora pública resulta de ajustar la mezcla con los scores y no demuestra mejora privada.
+
+`ensayos/jairo/2026-11-05-correccion-regional/` contiene una prueba exploratoria de corrección histórica de H1, sin score Kaggle; su validación usa una aproximación al finalista, no la receta exacta.
+
 ## 2026-11-04 — Parámetros aprendidos en lugar de umbrales a mano
 
 `ensayos/juan/2026-11-04-sin-reglas/` y el cuaderno de entrega. Los umbrales que seguían fijados a mano ahora se estiman con los años anteriores al evaluado, o se cambian por un método sin umbrales:
