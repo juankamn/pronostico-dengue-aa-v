@@ -2,6 +2,17 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-04 — Parámetros aprendidos en lugar de umbrales a mano
+
+`ensayos/juan/2026-11-04-sin-reglas/` y el cuaderno de entrega. Los umbrales que seguían fijados a mano ahora se estiman con los años anteriores al evaluado, o se cambian por un método sin umbrales:
+
+- **Corrección de nivel.** La semana de inicio (1, 4, 8, 13 o 17) y la fuerza (mínimos cuadrados, de 0 a 1,5) salen de los años anteriores, en vez de media fuerza desde la semana 8. Para 2025 el apilado arranca en la semana 4 con fuerza 0,35. Walk-forward 2016-2023 del apilado con nivel por región: 3350. El 3230 anterior era optimista, porque la media fuerza y la semana 8 se habían elegido mirando todos los años.
+- **Regla de caída de B.** Se prueban 63 combinaciones de exceso, caída y razón, más no usar la regla, y cada año se elige la que mejor rindió antes. Sale siempre exceso 1,8, caída 0,45 y razón 0,4. B baja de 3534 a 3386 en 2014-2023; sin regla da 3720, así que la regla sirve y lo que sobraba eran sus números fijos. Dentro del apilado la B aprendida empeoró el resultado, y por eso el apilado conserva la B original.
+- **Patrón de reporte.** Los 13 departamentos elegidos con umbrales (nivel de 60 casos, signo estable) quedan solo para leer el sensor. En los envíos, la razón de cada uno de los 31 departamentos se encoge hacia 1 según su ruido entre meses (Bayes empírico).
+- **Región.** La lista geográfica de la Costa se comparó con grupos aprendidos para los pesos del apilado: k-means sobre la forma de la curva dio 3365 y pesos por departamento encogidos hacia los nacionales, 3357, frente a 3235 de la lista (2016-2023, con la corrección fija de entonces). Se queda la lista, que además es la que mide el tablero público.
+
+Selecciones finales nuevas: `entrega/submission_seleccion_1.csv` (apilado con nivel aprendido; primer semestre 72,0) y `entrega/submission_seleccion_2.csv` (B con regla aprendida y nivel desde la semana 1 con fuerza 0,77; primer semestre 64,4; 3352 en 2016-2023 y 3052 en 2014-2023). Si Kaggle se queda cada año con la mejor de las dos, 2016-2023 da 3036, frente a 3168 del par anterior, que además usaba la corrección fija. En el primer trimestre la selección 2 abre Valle del Cauca en 127 casos por semana y el apilado en 322. El segundo semestre es el de los envíos de 1689,03586. Tablero público: 1689,03586 las dos, como se esperaba. Quedan marcadas como selecciones finales. El cuaderno ya no genera los archivos anteriores; quedan en `entrega/` como se subieron.
+
 ## 2026-11-04 — Selecciones finales con nivel por región
 
 El cuaderno de entrega ahora lee las dos sondas, calcula los k de 2025 por región (Costa 0,950, interior 0,887) y la suma de cuadrados del segundo semestre real, y con eso:
