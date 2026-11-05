@@ -2,6 +2,18 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-05 — Sonda de nivel de Valle del Cauca
+
+`ensayos/jairo/2026-11-05-sonda-valle/`: sonda sobre el mejor envío público 1646,97677; aumenta 50 % solo Valle del Cauca en H2. La sonda obtuvo 2005,86755. El ajuste óptimo estimado escala Valle en H2 por 0,719925 y estima score público 1593,86711, pendiente de confirmar. H1 queda igual. No demuestra mejora privada.
+
+## 2026-11-05 — Residuos climáticos sobre B
+
+`ensayos/jairo/2026-11-05-residuos-clima/`: modelo de árboles que corrige B usando clima, calendario, territorio y casos del año anterior. Mejora H1 frente a B en 2022–2024. En 2016–2023, una aproximación histórica a selección 1 da MSE H1 3355,6 frente a 3739,4 del modelo de residuos; la mezcla al 25 % da 3400,5. La aproximación usa el nivel real de H2 históricamente y no reproduce exactamente el finalista; no hay evidencia para sustituirlo. `submission_sonda_h2.csv` mantiene H1 de selección 1 y prueba H2; score público 2174,34931. Mezclar 2,55 % de esta sonda con la mezcla anterior estima 1646,61543, ganancia de 0,36 puntos, aún no confirmado. Ver limitaciones en notas.
+
+## 2026-11-05 — Mezcla pública multimodelo de Jairo
+
+`ensayos/jairo/2026-11-05-mezcla-multimodelo/`: combina siete envíos ya calificados. Score público **1646,97677**, confirmado en Kaggle. H1 idéntico a selección 1; la mezcla se optimizó usando scores públicos y no demuestra mejora privada. Detalles, pesos y limitaciones en la nota del ensayo.
+
 ## 2026-11-05 — Modelo global de árboles y mezcla pública de Jairo
 
 `ensayos/jairo/2026-11-05-modelo-global/`. Modelo global de árboles con clima, calendario, departamento y casos del año anterior: público **5773,16350**. Su validación anual mejora frente a B en 2023 y 2024, pero pierde en H1 de 2022; detalles y limitaciones en `notas.md`.
