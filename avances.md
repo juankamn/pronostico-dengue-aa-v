@@ -2,6 +2,19 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-04 — Selecciones finales
+
+`entrega/submission_bases_patron.csv` (B con el patrón de reporte) dio 1972,72476 en el tablero público. Las dos selecciones finales quedan así:
+
+1. `entrega/submission_mezcla_region.csv`: 1971,62176. Primer semestre de la mezcla por región (red 0,69 en el interior y 0,23 en la Costa).
+2. `entrega/submission_bases_patron.csv`: 1972,72476. Primer semestre de B, que cubre una caída fuerte en enero.
+
+Las dos comparten el segundo semestre, salvo julio, y por eso el público casi no las separa. El privado sí: en el primer semestre están a 940 de MSE una de otra.
+
+## 2026-11-04 — Red híbrida autoregresiva
+
+`ensayos/juan/2026-11-04-red-hibrida/`. TCN→LSTM y GRU→LSTM con decodificador autoregresivo de 52 semanas, para pronosticar todo 2025 con un solo modelo. En walk-forward pierden en los dos semestres: mitad con B dan 4036 y 4157 en el primer semestre de 2016-2023, frente a 3659 de la mezcla por región vigente, y 5516 y 5383 en el segundo de 2014-2023, frente a 5164 de B. El decodificador arrastra el nivel de diciembre en los años que siguen a un brote. No se sube.
+
 ## 2026-11-04 — Segundo semestre con redes de 52 semanas
 
 `ensayos/juan/2026-11-04-red-segundo-semestre/`. TCN y MLP con horizonte de 52 semanas. En el segundo semestre, mitad red y mitad B baja el walk-forward de 5164 a 4954 (2014-2023) y gana 5 de 10 años; los pesos por región no ayudan ahí. En el primer semestre estas redes rinden peor que las de 26 semanas, así que el primer semestre no cambia. `submission.csv` deja el primer semestre idéntico a la mezcla por región y solo cambia julio a diciembre: su puntaje público mide si la red lee bien 2025.
