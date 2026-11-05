@@ -2,6 +2,15 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-04 — Selecciones finales con nivel por región
+
+El cuaderno de entrega ahora lee las dos sondas, calcula los k de 2025 por región (Costa 0,950, interior 0,887) y la suma de cuadrados del segundo semestre real, y con eso:
+
+- **Primer semestre.** El apilado lleva su final hacia el nivel de su región (a media fuerza, desde la semana 8). Walk-forward 2016-2023: 3230, frente a 3355 con un solo nivel para el país, 3651 de la mezcla por región y 3909 de B. Mejor de las dos selecciones cada año: 3168 (antes 3298).
+- **Segundo semestre.** Combinación lineal de siete envíos ya subidos con penalización ridge (pesos de -0,39 a 0,44, sin negativos): 1689,04 exacto en el público. Está ajustada al tablero, así que su puntaje no indica nada del privado.
+
+Nuevas selecciones finales, pendientes de subir: `entrega/submission_final_apilado_region.csv` (primer semestre 71,8) y `entrega/submission_final_bases_region.csv` (64,9). Las selecciones con un solo nivel (`submission_final_apilado.csv` y `submission_final_bases.csv`, 1836,20689) quedan como se subieron.
+
 ## 2026-11-04 — Medición del nivel por región
 
 `ensayos/juan/2026-11-04-sonda-regiones/`. En la historia, corregir el primer semestre con un k para la Costa y otro para el interior, en vez de uno nacional, baja el apilado de 3360 a 3235 (2016-2023). Dos envíos de medición, con el primer semestre idéntico a la selección 1, dan esos dos k exactos para 2025.
