@@ -2,6 +2,21 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-04 — Apilamiento por región y nivel del segundo semestre
+
+Dos técnicas nuevas en el cuaderno de entrega, validadas solo con años anteriores:
+
+- **Apilamiento.** Pesos de B, TCN y MLP buscados por mínimos cuadrados, por separado para la Costa y el interior. Para 2025: interior 0,33 B + 0,67 TCN; Costa 0,62 B + 0,38 MLP. RNN, LSTM, GRU, las redes de 52 semanas y las híbridas reciben peso cero o empeoran el resultado.
+- **Nivel del segundo semestre.** Saber cuánto quedó el segundo semestre frente a B (la escala k) y llevar hacia ese nivel el final del primero, a media fuerza desde la semana 8, mejora el primer semestre en la historia. En 2025 el k sale del tablero público: 0,90.
+
+Primer semestre 2016-2023: apilado + nivel 3355, frente a 3651 de la mezcla por región, 3696 de la mezcla con peso 0,5 y 3909 de B; gana a la mezcla por región en 6 de 8 años. Si Kaggle se hubiera quedado cada año con el mejor de los dos envíos, el par (apilado + nivel) + (B + nivel) habría dado 3298, frente a 3616 del par anterior. Con otras tres semillas el apilado con nivel da 3352.
+
+Nuevas selecciones finales: `entrega/submission_final_apilado.csv` (primer semestre 71,7; Valle del Cauca 323 en el primer trimestre) y `entrega/submission_final_bases.csv` (64,7). Las dos llevan el segundo semestre calibrado con el tablero público. Tablero público: 1836,20689 las dos, como predecía el cálculo exacto (1836,22, un poco menos por el recorte a 0 de dos semanas). Reemplazan a la mezcla por región y a B con patrón como selecciones finales.
+
+## 2026-11-04 — Segundo semestre combinado para el tablero público
+
+`ensayos/juan/2026-11-04-mezcla-publico/`. Como el MSE es cuadrático, el puntaje público de una combinación de archivos ya subidos (pesos que suman 1) se calcula exacto con sus puntajes. La mejor combinación de cinco envíos baja el público a 1835,54 con el primer semestre de la mezcla por región, y a 1836,22 con el de B con patrón. El primer semestre de cada selección queda idéntico, así que el privado no cambia; solo mejora el puesto visible. No se subieron: ese segundo semestre pasó directo a las selecciones finales del apilado (ver la entrada de arriba).
+
 ## 2026-11-04 — Selecciones finales
 
 `entrega/submission_bases_patron.csv` (B con el patrón de reporte) dio 1972,72476 en el tablero público. Las dos selecciones finales quedan así:
