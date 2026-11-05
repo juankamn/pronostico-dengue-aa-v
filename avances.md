@@ -2,6 +2,14 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-04 — Medición del nivel por región
+
+`ensayos/juan/2026-11-04-sonda-regiones/`. En la historia, corregir el primer semestre con un k para la Costa y otro para el interior, en vez de uno nacional, baja el apilado de 3360 a 3235 (2016-2023). Dos envíos de medición, con el primer semestre idéntico a la selección 1, dan esos dos k exactos para 2025.
+
+Tablero público: sonda de la Costa 1842,97221; sonda del interior 2056,16650. Resultado: k de la Costa 0,950 (segundo semestre real ≈ 100 casos por departamento y semana, frente a 106 de B) y k del interior 0,887 (≈ 39 frente a 44); k del país 0,918. La combinación pública anterior sugería lo contrario (0,86 y 0,94), así que medir valió la pena.
+
+Con los dos k se conoce también la suma de cuadrados del segundo semestre real, y con eso el puntaje público exacto de cualquier combinación lineal de envíos subidos. B escalado por región con el patrón da 1926,78; una combinación lineal con pesos acotados (máximo 0,39 en valor absoluto, sin negativos) da 1704,41. Ese segundo semestre ya no es un indicador del privado: está ajustado al tablero. Lo que indica el privado es el walk-forward del primer semestre.
+
 ## 2026-11-04 — Apilamiento por región y nivel del segundo semestre
 
 Dos técnicas nuevas en el cuaderno de entrega, validadas solo con años anteriores:
