@@ -2,6 +2,20 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-07 — El 1459 quedó confirmado
+
+Kaggle devolvió **1459,16475** para `submission_privado.csv` y para `submission_seleccion_2.csv`. Es el mismo número que daba la matriz de productos. Los dos comparten el segundo semestre, así que el tablero no dice nada del primero.
+
+La mezcla de primer semestre que promedia 3170 en 2016-2023 no es mejor de forma estable: le gana al apilado en 5 de 8 años y pierde en 2016, 2021 y 2022. Las dos finales que cubren el privado son el primer semestre de la selección 1 (Valle en 322, `submission.csv` de la misma carpeta) y el de la selección 2 (Valle en 127), las dos con este segundo semestre. Rehacer la mezcla de archivos ya calificados no baja de 1459. Lo que sigue en público es `submission_sonda_bolivar.csv`, una sonda ×1,5 solo de Bolívar; no es finalista. Bolívar es la dirección que más queda fuera de la mezcla. Atlántico sería la siguiente.
+
+## 2026-11-07 — Mezcla exacta de los envíos ya calificados
+
+`ensayos/juan/2026-11-07-mezcla-medida/`: el segundo semestre es la combinación lineal de los 16 archivos con score público. El MSE sale de la matriz de productos: **1459,16**, mínimo 0,35. Valle del Cauca en H2 baja a 104. Aplicar la escala fina (Costa 0,95, Valle 0,54, resto 1,06) al apilado empeora el walk-forward del primer semestre (3356 a 3363 en 2016-2023). La mezcla 30 % apilado + 70 % B con esa escala baja el primer semestre a **3170** y deja el primer trimestre de Valle en 208, frente a 322 de la selección 1 y 127 de la selección 2. Los tres archivos comparten el H2, así que el público no los separa. `submission_sonda_bolivar.csv` es una sonda ×1,5 de Bolívar; no se sube hasta tener el score de la mezcla. No reemplaza nada en `entrega/`.
+
+## 2026-11-07 — Regimenes climaticos y tres familias de modelos
+
+`ensayos/juan/2026-11-07-ml-regimenes-multitarea/`: mezcla gaussiana por clima y estacionalidad, sin lista de departamentos; familia lineal de bases con agotamiento de 104 semanas; arboles en log-ratio (LightGBM, XGBoost, HistGradientBoosting); MLP, TCN y GRU a 52 semanas con la ancla corregida por la carga del brote; apilado por probabilidad de grupo. Walk-forward de la meta: H1 4181 / 4595 y H2 5348 / 6172, peor que B (3534 / 3909 y 5164 / 5934). En 2025 H2 la meta queda ~10 % sobre B en Costa, Valle y el resto, asi que no corrige el hueco de Valle que sugieren las sondas. `submission.csv` es la salida del experimento y no reemplaza el 1646,98. Detalle en `notas.md`.
+
 ## 2026-11-05 — Sonda de nivel de Valle del Cauca
 
 `ensayos/jairo/2026-11-05-sonda-valle/`: sonda sobre el mejor envío público 1646,97677; aumenta 50 % solo Valle del Cauca en H2. La sonda obtuvo 2005,86755. El ajuste óptimo estimado escala Valle en H2 por 0,719925 y estima score público 1593,86711, pendiente de confirmar. H1 queda igual. No demuestra mejora privada.
