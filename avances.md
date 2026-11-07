@@ -2,6 +2,10 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-07 — El 1438 quedó confirmado
+
+Kaggle devolvió **1438,54128** para `submission_calibrada.csv` y para `submission_calibrada_seleccion_2.csv`. Es el mismo número de la cuenta con Bolívar en 0,978 y Atlántico en 0,853. Los dos archivos comparten el segundo semestre, así que el tablero no dice nada del primero. El público baja 20,6 puntos frente a 1459,16475. Las dos finales siguen siendo estas: la selección 1 abre Valle en 322 y la selección 2 en 127.
+
 ## 2026-11-07 — Bolívar confirmado y Atlántico calibrado
 
 Kaggle confirmó el archivo de Bolívar en **1458,52285**, el mismo número de la cuenta. `submission_seleccion_2.csv` sigue en 1459,16475 porque no lleva ese factor. La sonda ×1,5 de Atlántico dio **1825,97217**. El factor óptimo es **0,853**: Atlántico pasa de 164,3 a 140,2 casos por semana. Junto con Bolívar el público estimado es **1438,54** (20,6 puntos debajo de 1459,16). Los dos tocan departamentos distintos, así que las bajas se suman. `submission_calibrada.csv` lleva el primer semestre de la selección 1 y `submission_calibrada_seleccion_2.csv` el de la selección 2. El segundo semestre es el mismo.

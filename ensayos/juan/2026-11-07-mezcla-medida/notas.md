@@ -6,7 +6,7 @@ Fecha: 2026-11-07. No se tocó `entrega/`.
 
 Kaggle devolvió **1828,40392** para `submission_sonda_bolivar.csv` (×1,5 solo en el segundo semestre de Bolívar, sobre la mezcla de 1459,16475). El factor que minimiza el público es **0,978**. Bolívar pasa de 203,2 a 198,8 casos por semana. El público estimado queda en **1458,52**, 0,64 puntos debajo de la mezcla. Bolívar ya estaba en el nivel que el tablero pide. No explica el hueco hasta 1300.
 
-`submission_bolivar_seleccion_2.csv` quedó confirmado en **1458,52285**. La sonda de Atlántico dio **1825,97217**. El factor es **0,853** y Atlántico pasa de 164,3 a 140,2. Con los dos factores el público estimado es **1438,54**. Va en `submission_calibrada.csv` y `submission_calibrada_seleccion_2.csv`, que conservan el primer semestre de cada selección.
+`submission_bolivar_seleccion_2.csv` quedó confirmado en **1458,52285**. La sonda de Atlántico dio **1825,97217**. El factor es **0,853** y Atlántico pasa de 164,3 a 140,2. Kaggle confirmó los dos archivos con ambos factores en **1438,54128**: `submission_calibrada.csv` (primer semestre de la selección 1) y `submission_calibrada_seleccion_2.csv` (el de la selección 2). El tablero no los separa.
 
 ## Perfil de brote
 
@@ -30,6 +30,4 @@ Lo que sí baja el error es mezclar, con un peso aprendido en los años anterior
 
 ## Qué subir
 
-La mezcla de 3170 no es finalista: le gana al apilado en 5 de 8 años y pierde en 2016, 2021 y 2022. Las dos finales siguen siendo el primer semestre de la selección 1 (`submission.csv`, Valle en 322) y el de la selección 2 (`submission_seleccion_2.csv`, Valle en 127), las dos con el segundo semestre de 1459,16. Kaggle ya calificó las dos de primer semestre bajo en 1459,16475. `submission.csv` es la que todavía cubre el enero alto.
-
-`submission_bolivar_seleccion_2.csv` quedó en 1458,52285, igual que la cuenta. `submission_sonda_atlantico.csv` quedó en 1825,97217. El factor de Atlántico es 0,853 y, sumado al de Bolívar, el público estimado es 1438,54. Eso va en `submission_calibrada.csv` (primer semestre de la selección 1) y en `submission_calibrada_seleccion_2.csv` (el de la selección 2).
+La mezcla de 3170 no es finalista: le gana al apilado en 5 de 8 años y pierde en 2016, 2021 y 2022. Las dos finales son `submission_calibrada.csv` (selección 1, Valle en 322) y `submission_calibrada_seleccion_2.csv` (selección 2, Valle en 127). Kaggle las calificó las dos en **1438,54128**. El segundo semestre es el mismo, así que el privado sigue siendo la cobertura entre enero alto y enero bajo.
