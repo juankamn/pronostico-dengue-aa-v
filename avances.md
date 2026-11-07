@@ -2,6 +2,16 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-07 — Bolívar confirmado y Atlántico calibrado
+
+Kaggle confirmó el archivo de Bolívar en **1458,52285**, el mismo número de la cuenta. `submission_seleccion_2.csv` sigue en 1459,16475 porque no lleva ese factor. La sonda ×1,5 de Atlántico dio **1825,97217**. El factor óptimo es **0,853**: Atlántico pasa de 164,3 a 140,2 casos por semana. Junto con Bolívar el público estimado es **1438,54** (20,6 puntos debajo de 1459,16). Los dos tocan departamentos distintos, así que las bajas se suman. `submission_calibrada.csv` lleva el primer semestre de la selección 1 y `submission_calibrada_seleccion_2.csv` el de la selección 2. El segundo semestre es el mismo.
+
+## 2026-11-07 — Bolívar ya estaba en el nivel, y el perfil de brote no entra
+
+La sonda ×1,5 de Bolívar dio **1828,40392**. El factor óptimo sobre la mezcla de 1459,16475 es 0,978 y el público estimado baja a **1458,52** (0,64 puntos). Bolívar queda en 198,8. No es el hueco hasta 1300. `submission_sonda_atlantico.csv` es la sonda siguiente, ×1,5 solo en el segundo semestre de Atlántico, y no es finalista.
+
+`ensayos/juan/2026-11-07-perfil-brote/`: perfil de brote sin el tope de 2 y 2,8 veces la mediana, contra un perfil calmo. El peso de mezcla con B, elegido solo con años anteriores, sale 0 todos los años. En 2016–2023 el perfil puro da 6609 contra 3909 de B, y en la semana del pico llega a 0,38 del valor real contra 0,49 de B. No se sube.
+
 ## 2026-11-07 — El 1459 quedó confirmado
 
 Kaggle devolvió **1459,16475** para `submission_privado.csv` y para `submission_seleccion_2.csv`. Es el mismo número que daba la matriz de productos. Los dos comparten el segundo semestre, así que el tablero no dice nada del primero.
