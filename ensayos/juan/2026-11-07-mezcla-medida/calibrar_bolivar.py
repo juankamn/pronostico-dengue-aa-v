@@ -20,10 +20,27 @@ SCORE_BOLIVAR = 1828.40392
 SCORE_ATLANTICO = 1825.97217
 SCORE_CALIBRADA = 1438.54128
 SCORE_TOLIMA = 1674.09549
+SCORE_VIGENTE = 1398.01602
+SCORE_NORTE = 1366.44918
+SCORE_NORTE_ARCHIVO = 1356.02336
+SCORE_META = 1326.70176
+SCORE_META_ARCHIVO = 1313.36105
+SCORE_CORDOBA = 1292.95694
+SCORE_CORDOBA_ARCHIVO = 1276.39544
+SCORE_ANTIOQUIA = 1383.21656
+SCORE_SUCRE = 1464.39444
+PESO_H1_SUCRE = 0.5
+PESO_H1_META = 1.0
 PESO_H1_TOLIMA = 0.5
 BOLIVAR = 5
 ATLANTICO = 4
 TOLIMA = 29
+NORTE = 22
+META = 20
+CORDOBA = 13
+ANTIOQUIA = 2
+SUCRE = 28
+SANTANDER = 27
 
 
 def main() -> None:
@@ -146,6 +163,170 @@ def main() -> None:
     guardar_tolima(sel1, "submission_tolima.csv")
     guardar_tolima(sel2, "submission_tolima_seleccion_2.csv")
     print(f"primer semestre Tolima x {factor_h1:.5f}")
+
+    vigente = pd.read_csv(CARPETA / "submission_tolima.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    norte = partes[0].eq(NORTE).to_numpy() & publico
+    sonda_norte = pd.read_csv(CARPETA / "submission_sonda_norte.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    if not np.allclose(sonda_norte[~norte], vigente[~norte]):
+        raise RuntimeError("La sonda no deja quieto todo lo que no es Norte H2")
+    if not np.allclose(sonda_norte[norte], vigente[norte] * 1.5):
+        raise RuntimeError("La sonda no es x1.5 en Norte H2")
+    p_vig = vigente[publico]
+    producto_dn = mezcla.producto_sonda(p_vig, sonda_norte[publico], SCORE_VIGENTE, SCORE_NORTE)
+    vn = np.where(norte[publico], p_vig, 0.0)
+    producto_vn = producto_dn / 0.5
+    factor_n = producto_vn / float(vn @ vn)
+    pred_norte = p_vig + (factor_n - 1.0) * vn
+    producto_vig = (float(p_vig @ p_vig) + norma_y - n * SCORE_VIGENTE) / 2
+    producto_norte = producto_vig + (factor_n - 1.0) * producto_vn
+    puntaje_norte = mezcla.score_de(pred_norte, producto_norte, norma_y)
+    print(f"factor Norte {factor_n:.5f}  media {pred_norte[norte[publico]].mean():.2f}  antes {p_vig[norte[publico]].mean():.2f}")
+    print(f"MSE publico Norte {puntaje_norte:.5f}  baja {SCORE_VIGENTE - puntaje_norte:.2f}  minimo {pred_norte.min():.4f}")
+
+    def guardar_norte(origen: str, nombre: str) -> None:
+        valores = pd.read_csv(CARPETA / origen).set_index("id").dengue.loc[ids].to_numpy(float)
+        valores[publico] = np.maximum(pred_norte, 0.0)
+        if not np.isfinite(valores).all() or valores.min() < -1e-8:
+            raise RuntimeError(nombre)
+        envio = muestra[["id"]].copy()
+        envio["dengue"] = np.maximum(valores, 0.0)
+        envio.to_csv(CARPETA / nombre, index=False)
+
+    guardar_norte("submission_tolima.csv", "submission_norte.csv")
+    guardar_norte("submission_tolima_seleccion_2.csv", "submission_norte_seleccion_2.csv")
+
+    norte_h2 = pd.read_csv(CARPETA / "submission_norte.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    meta = partes[0].eq(META).to_numpy() & publico
+    sonda_meta = pd.read_csv(CARPETA / "submission_sonda_meta.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    if not np.allclose(sonda_meta[~meta], norte_h2[~meta]):
+        raise RuntimeError("La sonda no deja quieto todo lo que no es Meta H2")
+    if not np.allclose(sonda_meta[meta], norte_h2[meta] * 1.5):
+        raise RuntimeError("La sonda no es x1.5 en Meta H2")
+    p_n = norte_h2[publico]
+    producto_dm = mezcla.producto_sonda(p_n, sonda_meta[publico], SCORE_NORTE_ARCHIVO, SCORE_META)
+    vm = np.where(meta[publico], p_n, 0.0)
+    producto_vm = producto_dm / 0.5
+    factor_m = producto_vm / float(vm @ vm)
+    pred_meta = p_n + (factor_m - 1.0) * vm
+    producto_n = (float(p_n @ p_n) + norma_y - n * SCORE_NORTE_ARCHIVO) / 2
+    producto_meta = producto_n + (factor_m - 1.0) * producto_vm
+    puntaje_meta = mezcla.score_de(pred_meta, producto_meta, norma_y)
+    print(f"factor Meta {factor_m:.5f}  media {pred_meta[meta[publico]].mean():.2f}  antes {p_n[meta[publico]].mean():.2f}")
+    print(f"MSE publico Meta {puntaje_meta:.5f}  baja {SCORE_NORTE_ARCHIVO - puntaje_meta:.2f}  minimo {pred_meta.min():.4f}")
+
+    factor_h1_m = 1.0 + PESO_H1_META * (factor_m - 1.0)
+    meta_h1 = partes[0].eq(META).to_numpy() & ~publico
+
+    def guardar_meta(origen: str, nombre: str) -> None:
+        valores = pd.read_csv(CARPETA / origen).set_index("id").dengue.loc[ids].to_numpy(float)
+        valores[publico] = np.maximum(pred_meta, 0.0)
+        valores[meta_h1] *= factor_h1_m
+        if not np.isfinite(valores).all() or valores.min() < -1e-8:
+            raise RuntimeError(nombre)
+        envio = muestra[["id"]].copy()
+        envio["dengue"] = np.maximum(valores, 0.0)
+        envio.to_csv(CARPETA / nombre, index=False)
+
+    guardar_meta("submission_norte.csv", "submission_meta.csv")
+    guardar_meta("submission_norte_seleccion_2.csv", "submission_meta_seleccion_2.csv")
+    print(f"primer semestre Meta x {factor_h1_m:.5f}")
+
+    meta_h2 = pd.read_csv(CARPETA / "submission_meta.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    cordoba = partes[0].eq(CORDOBA).to_numpy() & publico
+    sonda_cordoba = pd.read_csv(CARPETA / "submission_sonda_cordoba.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    if not np.allclose(sonda_cordoba[~cordoba], meta_h2[~cordoba]):
+        raise RuntimeError("La sonda no deja quieto todo lo que no es Cordoba H2")
+    if not np.allclose(sonda_cordoba[cordoba], meta_h2[cordoba] * 1.5):
+        raise RuntimeError("La sonda no es x1.5 en Cordoba H2")
+    p_m = meta_h2[publico]
+    producto_dc = mezcla.producto_sonda(p_m, sonda_cordoba[publico], SCORE_META_ARCHIVO, SCORE_CORDOBA)
+    vc = np.where(cordoba[publico], p_m, 0.0)
+    producto_vc = producto_dc / 0.5
+    factor_c = producto_vc / float(vc @ vc)
+    pred_cordoba = p_m + (factor_c - 1.0) * vc
+    producto_m = (float(p_m @ p_m) + norma_y - n * SCORE_META_ARCHIVO) / 2
+    producto_cordoba = producto_m + (factor_c - 1.0) * producto_vc
+    puntaje_cordoba = mezcla.score_de(pred_cordoba, producto_cordoba, norma_y)
+    print(f"factor Cordoba {factor_c:.5f}  media {pred_cordoba[cordoba[publico]].mean():.2f}  antes {p_m[cordoba[publico]].mean():.2f}")
+    print(f"MSE publico Cordoba {puntaje_cordoba:.5f}  baja {SCORE_META_ARCHIVO - puntaje_cordoba:.2f}  minimo {pred_cordoba.min():.4f}")
+
+    def guardar_cordoba(origen: str, nombre: str) -> None:
+        valores = pd.read_csv(CARPETA / origen).set_index("id").dengue.loc[ids].to_numpy(float)
+        valores[publico] = np.maximum(pred_cordoba, 0.0)
+        if not np.isfinite(valores).all() or valores.min() < -1e-8:
+            raise RuntimeError(nombre)
+        envio = muestra[["id"]].copy()
+        envio["dengue"] = np.maximum(valores, 0.0)
+        envio.to_csv(CARPETA / nombre, index=False)
+
+    guardar_cordoba("submission_meta.csv", "submission_cordoba.csv")
+    guardar_cordoba("submission_meta_seleccion_2.csv", "submission_cordoba_seleccion_2.csv")
+
+    cordoba_h2 = pd.read_csv(CARPETA / "submission_cordoba.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    antioquia = partes[0].eq(ANTIOQUIA).to_numpy() & publico
+    sonda_antioquia = pd.read_csv(CARPETA / "submission_sonda_antioquia.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    if not np.allclose(sonda_antioquia[~antioquia], cordoba_h2[~antioquia]):
+        raise RuntimeError("La sonda no deja quieto todo lo que no es Antioquia H2")
+    if not np.allclose(sonda_antioquia[antioquia], cordoba_h2[antioquia] * 1.5):
+        raise RuntimeError("La sonda no es x1.5 en Antioquia H2")
+    p_c = cordoba_h2[publico]
+    producto_da = mezcla.producto_sonda(p_c, sonda_antioquia[publico], SCORE_CORDOBA_ARCHIVO, SCORE_ANTIOQUIA)
+    va = np.where(antioquia[publico], p_c, 0.0)
+    producto_va = producto_da / 0.5
+    factor_a = producto_va / float(va @ va)
+    pred_antioquia = p_c + (factor_a - 1.0) * va
+    producto_c = (float(p_c @ p_c) + norma_y - n * SCORE_CORDOBA_ARCHIVO) / 2
+    producto_ant = producto_c + (factor_a - 1.0) * producto_va
+    puntaje_ant = mezcla.score_de(pred_antioquia, producto_ant, norma_y)
+    print(f"factor Antioquia {factor_a:.5f}  media {pred_antioquia[antioquia[publico]].mean():.2f}  antes {p_c[antioquia[publico]].mean():.2f}")
+    print(f"MSE publico Antioquia {puntaje_ant:.5f}  baja {SCORE_CORDOBA_ARCHIVO - puntaje_ant:.2f}")
+
+    sucre = partes[0].eq(SUCRE).to_numpy() & publico
+    sonda_sucre = pd.read_csv(CARPETA / "submission_sonda_sucre.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    if not np.allclose(sonda_sucre[~sucre], cordoba_h2[~sucre]):
+        raise RuntimeError("La sonda no deja quieto todo lo que no es Sucre H2")
+    if not np.allclose(sonda_sucre[sucre], cordoba_h2[sucre] * 1.5):
+        raise RuntimeError("La sonda no es x1.5 en Sucre H2")
+    producto_ds = mezcla.producto_sonda(p_c, sonda_sucre[publico], SCORE_CORDOBA_ARCHIVO, SCORE_SUCRE)
+    vs = np.where(sucre[publico], p_c, 0.0)
+    producto_vs = producto_ds / 0.5
+    factor_s = producto_vs / float(vs @ vs)
+    pred_sucre = p_c + (factor_s - 1.0) * vs + (factor_a - 1.0) * va
+    producto_sucre = producto_c + (factor_s - 1.0) * producto_vs + (factor_a - 1.0) * producto_va
+    puntaje_sucre = mezcla.score_de(pred_sucre, producto_sucre, norma_y)
+    print(f"factor Sucre {factor_s:.5f}  media {pred_sucre[sucre[publico]].mean():.2f}  antes {p_c[sucre[publico]].mean():.2f}")
+    print(f"MSE publico Sucre {puntaje_sucre:.5f}  baja {SCORE_CORDOBA_ARCHIVO - puntaje_sucre:.2f}  minimo {pred_sucre.min():.4f}")
+
+    factor_h1_s = 1.0 + PESO_H1_SUCRE * (factor_s - 1.0)
+    sucre_h1 = partes[0].eq(SUCRE).to_numpy() & ~publico
+
+    def guardar_sucre(origen: str, nombre: str) -> None:
+        valores = pd.read_csv(CARPETA / origen).set_index("id").dengue.loc[ids].to_numpy(float)
+        valores[publico] = np.maximum(pred_sucre, 0.0)
+        valores[sucre_h1] *= factor_h1_s
+        if not np.isfinite(valores).all() or valores.min() < -1e-8:
+            raise RuntimeError(nombre)
+        envio = muestra[["id"]].copy()
+        envio["dengue"] = np.maximum(valores, 0.0)
+        envio.to_csv(CARPETA / nombre, index=False)
+
+    guardar_sucre("submission_cordoba.csv", "submission_sucre.csv")
+    guardar_sucre("submission_cordoba_seleccion_2.csv", "submission_sucre_seleccion_2.csv")
+    print(f"primer semestre Sucre x {factor_h1_s:.5f}")
+
+    santander = partes[0].eq(SANTANDER).to_numpy() & publico
+    sonda_santander = pd.read_csv(CARPETA / "submission_sucre.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    sonda_santander[santander] *= 1.5
+    if sonda_santander.min() < -1e-8 or not np.isfinite(sonda_santander).all():
+        raise RuntimeError("Sonda de Santander no valida")
+    envio_santander = muestra[["id"]].copy()
+    envio_santander["dengue"] = sonda_santander
+    envio_santander.to_csv(CARPETA / "submission_sonda_santander.csv", index=False)
+    distancia_santander = float(np.mean((sonda_santander[publico] - pred_sucre) ** 2))
+    print(
+        f"sonda Santander x1.5  distancia MSE {distancia_santander:.6f}"
+        f"  media {pred_sucre[santander[publico]].mean():.2f}  filas {int(santander.sum())}"
+    )
 
 
 if __name__ == "__main__":

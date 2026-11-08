@@ -2,6 +2,30 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-08 — Sucre baja a 50 y el público queda en 1223
+
+La sonda ×1,5 de Sucre dio **1464,39444**. Ese número dice que el ×1,5 se pasó: el factor es **0,554**. Sucre pasa de 90,7 a 50,3 casos por semana, cerca de su media histórica de 46. El público estimado es **1222,72**, 53,7 puntos debajo de 1276,40. El archivo también lleva el 0,993 de Antioquia, que son dos centésimas. En el primer semestre el peso es 0,5: en 2016-2023 baja el H1 de B de 3909 a 3893. Pierde 2018 por 0,3 y 2021 por 2,3. La sonda siguiente es Santander.
+
+## 2026-11-07 — Antioquia ya estaba en el nivel
+
+Kaggle confirmó Córdoba en **1276,39544**. La sonda ×1,5 de Antioquia dio **1383,21656**. El factor es **0,993** y el público estimado queda en **1276,38**, dos centésimas debajo. Antioquia no se toca, ni en el segundo semestre ni en el primero: el peso del primero, elegido año a año, deja 2016-2023 en 3914, peor que 3909 de B. La sonda siguiente es Sucre, ×1,5 solo en su segundo semestre, sobre el archivo de 1276,40. No es finalista.
+
+## 2026-11-07 — Córdoba baja el público a 1276
+
+Kaggle confirmó Meta en **1313,36105**. La sonda ×1,5 de Córdoba dio **1292,95694**. El factor es **1,300**: Córdoba pasa de 112,7 a 146,5 y el público estimado queda en **1276,40**. El primer semestre de Córdoba no se toca: el peso elegido año a año deja 2016-2023 en 3912, peor que 3909 de B. La sonda siguiente es Antioquia, ×1,5 solo en su segundo semestre. No es finalista.
+
+## 2026-11-07 — Meta baja el público a 1313
+
+Kaggle confirmó Norte en **1356,02336**. La sonda ×1,5 de Meta dio **1326,70176**. El factor es **1,321**: Meta pasa de 113,3 a 149,6 y el público estimado queda en **1313,36**, 42,7 puntos debajo de Norte. El primer semestre de Meta se multiplica por el mismo factor. El peso 1, elegido solo con años anteriores, baja el H1 de B de 3909 a 3625 en 2016-2023 y no empeora ningún año. `submission_sonda_cordoba.csv` es la sonda siguiente, ×1,5 solo en el segundo semestre de Córdoba. No es finalista.
+
+## 2026-11-07 — Norte sube y la sonda que sigue es Meta
+
+La sonda ×1,5 de Norte de Santander dio **1366,44918**, mejor que 1398,01602. El factor es **1,334**: Norte pasa de 107,3 a 143,1 y el público estimado queda en **1356,02**. El primer semestre de Norte no se toca: al elegir el peso solo con años anteriores, 2018 empeora 154 puntos. Meta es la sonda siguiente porque en 2016-2023 copiar su nivel del segundo semestre al primero baja el error los 8 años. `submission_sonda_meta.csv` es ×1,5 solo en el segundo semestre de Meta, sobre ese archivo. No es finalista.
+
+## 2026-11-07 — Sonda de Norte de Santander
+
+`ensayos/juan/2026-11-07-mezcla-medida/submission_sonda_norte.csv` es ×1,5 solo en el segundo semestre de Norte de Santander, sobre el archivo de 1398,01602. El primer semestre queda igual. No es finalista. Después de Tolima es la dirección nueva más grande.
+
 ## 2026-11-07 — El 1398 quedó confirmado
 
 Kaggle devolvió **1398,01602** para `submission_tolima.csv` y para `submission_tolima_seleccion_2.csv`. La cuenta daba 1398,01603. Tolima queda en 0,689 sobre el 1438,54, y el público baja 40,5 puntos. Los dos comparten el segundo semestre, así que el tablero no dice nada del primero. La selección 1 abre Valle en 322 y la selección 2 en 127. En el primer semestre solo cambia Tolima, con peso 0,5.

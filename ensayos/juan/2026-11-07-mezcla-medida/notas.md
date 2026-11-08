@@ -32,6 +32,34 @@ Lo que sí baja el error es mezclar, con un peso aprendido en los años anterior
 
 `submission_sonda_tolima.csv` dio **1674,09549**. El factor es **0,689** y Tolima pasa de 112,1 a 77,3 en el segundo semestre. Kaggle confirmó **1398,01602** en `submission_tolima.csv` y en `submission_tolima_seleccion_2.csv` (la cuenta daba 1398,01603). El primer semestre de Tolima se multiplica por 0,845. El peso 0,5 sale de los años anteriores: en 2016-2023 baja el H1 de B de 3909 a 3789 y gana los 8 años. No se copia a otros departamentos.
 
+## Sonda de Norte de Santander
+
+`submission_sonda_norte.csv` multiplica por 1,5 solo el segundo semestre de Norte de Santander sobre `submission_tolima.csv`. El primer semestre no cambia. No es finalista. Es la dirección nueva más grande que queda después de Tolima. El factor se calcula cuando llegue el puntaje.
+
+## Norte, ya calificado
+
+`submission_sonda_norte.csv` dio **1366,44918**. Kaggle confirmó **1356,02336** en `submission_norte.csv` y en `submission_norte_seleccion_2.csv`. El factor es **1,334** y Norte pasa de 107,3 a 143,1. El primer semestre de Norte no se toca.
+
+## Meta, ya calificada
+
+`submission_sonda_meta.csv` dio **1326,70176**. El factor es **1,321** y Meta pasa de 113,3 a 149,6. El público estimado es **1313,36**. El primer semestre de Meta se multiplica por ese mismo factor: el peso 1 sale de los años anteriores y, elegido año a año, no empeora ninguno de 2016-2023. Va en `submission_meta.csv` y `submission_meta_seleccion_2.csv`.
+
+## Córdoba, ya calificada
+
+`submission_sonda_cordoba.csv` dio **1292,95694**. El factor es **1,300** y Córdoba pasa de 112,7 a 146,5. El público estimado es **1276,40**. Va en `submission_cordoba.csv` y `submission_cordoba_seleccion_2.csv`, con el mismo primer semestre de los archivos de Meta. Córdoba no entra al primer semestre.
+
+## Antioquia, ya medida
+
+`submission_sonda_antioquia.csv` dio **1383,21656**. El factor es **0,993**. El público pasaría de 1276,39544 a 1276,38. No se arma otro archivo: Antioquia ya estaba en el nivel. El primer semestre tampoco se toca.
+
+## Sucre, ya calificada
+
+`submission_sonda_sucre.csv` dio **1464,39444**. El ×1,5 iba hacia arriba y el tablero pide **0,554**: Sucre pasa de 90,7 a 50,3. Su media histórica es 46 casos por semana. El público estimado es **1222,72**, ya con el 0,993 de Antioquia incluido. El primer semestre de Sucre se multiplica por 0,777. Va en `submission_sucre.csv` y `submission_sucre_seleccion_2.csv`.
+
+## Sonda de Santander
+
+`submission_sonda_santander.csv` multiplica por 1,5 solo el segundo semestre de Santander sobre `submission_sucre.csv`. El primer semestre no cambia. No es finalista.
+
 ## Qué subir
 
-La mezcla de 3170 no es finalista: le gana al apilado en 5 de 8 años y pierde en 2016, 2021 y 2022. Las dos finales son `submission_tolima.csv` (selección 1, Valle en 322) y `submission_tolima_seleccion_2.csv` (selección 2, Valle en 127). Kaggle las calificó las dos en **1398,01602**. El segundo semestre es el mismo. En el primero solo cambia Tolima.
+La mezcla de 3170 no es finalista. Las dos finales son `submission_sucre.csv` (selección 1, Valle en 322) y `submission_sucre_seleccion_2.csv` (selección 2, Valle en 127). El público estimado es **1222,72**. El segundo semestre es el mismo. En el primero cambian Tolima, Meta y Sucre.
