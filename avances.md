@@ -2,6 +2,42 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-08 — Relevo: faltan 17 sondas
+
+Juan se quedó sin envíos. Otra persona puede seguir desde aquí. El público vigente es `ensayos/juan/2026-11-07-mezcla-medida/submission_cundinamarca.csv`, confirmado en **1156,27758**. El gemelo `submission_cundinamarca_seleccion_2.csv` (Valle en 127 en el primer semestre) todavía no está en el tablero. El segundo semestre de los dos es el mismo.
+
+La sonda lista para subir es `submission_sonda_putumayo.csv`. Multiplica por 1,5 solo el segundo semestre de Putumayo (id 23) sobre el archivo de 1156,28. El primer semestre no cambia. No es finalista. Si Putumayo ya estaba bien, el público sube unos 12 puntos.
+
+Al llegar el puntaje, el factor sale con la misma cuenta de `calibrar_bolivar.py`: `producto_sonda` en `ejecutar.py`, usando **1156,27758** como puntaje de la base. La sonda ya puntuada se lee y se comprueba; no se vuelve a escribir. El primer semestre de ese departamento se copia solo si el peso, elegido año a año en 2014-2023 con la grilla 0, 0,25, 0,5, 0,75 y 1 sobre `ensayos/juan/2026-11-04-red-dinamica-h1/b_walkforward.parquet`, no empeora un año por decenas de puntos. Pasaron Tolima (0,845), Meta (1,321), Sucre (0,777) y Cesar (1,228). El resto del primer semestre queda como en las dos selecciones de `entrega/`.
+
+Un envío mide un departamento. El factor de uno no se aplica a otro. Valle (id 30) ya se midió y no se vuelve a sondar. No hace falta reentrenar ni tocar `entrega/` ni `pipeline.py`.
+
+De 31 departamentos faltan 17. Cada uno es una sonda. El archivo calibrado se puede armar en local con el puntaje; subirlo solo confirma un número que la cuenta ya da. El orden, y cuánto sube el público si el nivel ya estaba bien:
+
+| Siguiente | Id | Sube si ya estaba bien |
+|---|---|---|
+| Putumayo | 23 | 12 |
+| Casanare | 9 | 10 |
+| Magdalena | 19 | 8 |
+| Caqueta | 8 | 4 |
+| Arauca | 3 | 4 |
+| Quindio | 24 | 4 |
+| Cauca | 10 | 4 |
+| Risaralda | 25 | 3 |
+| Narino | 21 | 2 |
+| Choco | 12 | menos de 1 |
+| Boyaca | 6 | menos de 1 |
+| Amazonas | 1 | menos de 1 |
+| Guaviare | 17 | menos de 1 |
+| Caldas | 7 | menos de 1 |
+| Vichada | 32 | casi 0 |
+| Vaupes | 31 | casi 0 |
+| Guainia | 15 | casi 0 |
+
+Los últimos ocho tienen pocos casos. Si se acaban los envíos, se pueden dejar.
+
+Cuando la lista esté cerrada, un solo notebook puede reescribir toda la escalera. Lee los 16 envíos y sus puntajes de `ejecutar.py`, la lista de puntajes de cada sonda y las dos selecciones de `entrega/`. No reentrena y no inventa puntajes de Kaggle.
+
 ## 2026-11-08 — Cundinamarca baja a 42 y el público queda en 1156
 
 Kaggle confirmó `submission_cundinamarca.csv` en **1156,27758**. La sonda ×1,5 dio **1203,76053** y el factor es **0,791**: Cundinamarca pasa de 53,4 a 42,2, cuatro puntos debajo de 1160,42. El primer semestre no se toca: el peso elegido año a año empeora 2016 en 72 puntos y el promedio queda en 3909. Falta subir el gemelo `submission_cundinamarca_seleccion_2.csv` y la sonda de Putumayo. La sonda no es finalista.

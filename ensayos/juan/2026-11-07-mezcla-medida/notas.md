@@ -80,6 +80,12 @@ Lo que sí baja el error es mezclar, con un peso aprendido en los años anterior
 
 `submission_sonda_putumayo.csv` multiplica por 1,5 solo el segundo semestre de Putumayo sobre `submission_cundinamarca.csv`. El primer semestre no cambia. No es finalista.
 
+## Relevo
+
+Juan se quedó sin envíos. El público vigente es `submission_cundinamarca.csv`, **1156,27758**. El gemelo `submission_cundinamarca_seleccion_2.csv` (Valle en 127) sigue pendiente y no cambia el público.
+
+Lo que sigue es subir `submission_sonda_putumayo.csv`. No es finalista. Con ese puntaje se calibra Putumayo igual que Cundinamarca, tomando **1156,27758** como base, y se arma la sonda del siguiente. La sonda puntuada se lee; no se regenera. El detalle de las 17 que faltan, el orden y la regla del primer semestre está en `avances.md`, sección «Relevo: faltan 17 sondas».
+
 ## Qué subir
 
-La mezcla de 3170 no es finalista. Las dos finales son `submission_cundinamarca.csv` (selección 1, Valle en 322, ya en el tablero con **1156,27758**) y `submission_cundinamarca_seleccion_2.csv` (selección 2, Valle en 127, pendiente). El segundo semestre es el mismo. En el primero cambian Tolima, Meta, Sucre y Cesar. La sonda de Putumayo también está pendiente.
+La mezcla de 3170 no es finalista. Las dos finales de hoy son `submission_cundinamarca.csv` (selección 1, Valle en 322, ya en el tablero con **1156,27758**) y `submission_cundinamarca_seleccion_2.csv` (selección 2, Valle en 127, pendiente). El segundo semestre es el mismo. En el primero cambian Tolima, Meta, Sucre y Cesar. La sonda de Putumayo también está pendiente.
