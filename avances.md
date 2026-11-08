@@ -2,6 +2,26 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-08 — Cundinamarca baja a 42 y el público queda en 1156
+
+Kaggle confirmó `submission_cundinamarca.csv` en **1156,27758**. La sonda ×1,5 dio **1203,76053** y el factor es **0,791**: Cundinamarca pasa de 53,4 a 42,2, cuatro puntos debajo de 1160,42. El primer semestre no se toca: el peso elegido año a año empeora 2016 en 72 puntos y el promedio queda en 3909. Falta subir el gemelo `submission_cundinamarca_seleccion_2.csv` y la sonda de Putumayo. La sonda no es finalista.
+
+## 2026-11-08 — Guajira sube una punta y el público queda en 1160
+
+Kaggle confirmó Cesar en **1162,39485**. La sonda ×1,5 de Guajira dio **1170,31288**. El factor es **1,154**: Guajira pasa de 49,6 a 57,2 y el público estimado queda en **1160,42**, dos puntos debajo. El primer semestre de Guajira no se toca: el peso elegido año a año empeora 2022 en 36 puntos y el promedio de 2016-2023 queda en 3909, igual que B. La sonda siguiente es Cundinamarca, ×1,5 solo en su segundo semestre. No es finalista.
+
+## 2026-11-08 — Cesar sube a 95 y el público queda en 1162
+
+Kaggle confirmó Huila en **1190,74829**. La sonda ×1,5 de Cesar dio **1162,65830**. El factor es **1,456**: Cesar pasa de 64,9 a 94,6 y el público estimado queda en **1162,39**, 28 puntos debajo. En el primer semestre el peso es 0,5, así que Cesar se multiplica por 1,228. En 2016-2023 eso baja el H1 de B de 3909 a 3875. Pierde 2018 por 3,5, 2019 por 8,7, 2021 por 2,5 y 2022 por 2,7, y gana 2016 por 198. La sonda siguiente es Guajira, ×1,5 solo en su segundo semestre. No es finalista.
+
+## 2026-11-08 — Huila baja a 36 y el público queda en 1191
+
+Kaggle confirmó Santander en **1221,71529**. La sonda ×1,5 de Huila dio **1329,83604**. El ×1,5 se pasó: el factor es **0,553**. Huila pasa de 65,8 a 36,4 y el público estimado queda en **1190,75**, 31 puntos debajo. El primer semestre de Huila no se toca: el peso elegido año a año empeora 2020 en 98 puntos, aunque el promedio de 2016-2023 baje de 3909 a 3818. La sonda siguiente es Cesar, ×1,5 solo en su segundo semestre. No es finalista.
+
+## 2026-11-08 — Santander sube una punta
+
+Kaggle confirmó Sucre en **1222,72250**. La sonda ×1,5 de Santander dio **1418,34102**. El factor es **1,033**: Santander pasa de 165,9 a 171,4 y el público estimado queda en **1221,72**, un punto debajo. El primer semestre de Santander no se toca: el peso elegido año a año empeora 2016 en 48 puntos. La sonda siguiente es Huila, ×1,5 solo en su segundo semestre. No es finalista.
+
 ## 2026-11-08 — Sucre baja a 50 y el público queda en 1223
 
 La sonda ×1,5 de Sucre dio **1464,39444**. Ese número dice que el ×1,5 se pasó: el factor es **0,554**. Sucre pasa de 90,7 a 50,3 casos por semana, cerca de su media histórica de 46. El público estimado es **1222,72**, 53,7 puntos debajo de 1276,40. El archivo también lleva el 0,993 de Antioquia, que son dos centésimas. En el primer semestre el peso es 0,5: en 2016-2023 baja el H1 de B de 3909 a 3893. Pierde 2018 por 0,3 y 2021 por 2,3. La sonda siguiente es Santander.

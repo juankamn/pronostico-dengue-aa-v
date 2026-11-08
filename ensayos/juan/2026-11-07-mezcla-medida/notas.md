@@ -56,10 +56,30 @@ Lo que sí baja el error es mezclar, con un peso aprendido en los años anterior
 
 `submission_sonda_sucre.csv` dio **1464,39444**. El ×1,5 iba hacia arriba y el tablero pide **0,554**: Sucre pasa de 90,7 a 50,3. Su media histórica es 46 casos por semana. El público estimado es **1222,72**, ya con el 0,993 de Antioquia incluido. El primer semestre de Sucre se multiplica por 0,777. Va en `submission_sucre.csv` y `submission_sucre_seleccion_2.csv`.
 
-## Sonda de Santander
+## Santander, ya calificada
 
-`submission_sonda_santander.csv` multiplica por 1,5 solo el segundo semestre de Santander sobre `submission_sucre.csv`. El primer semestre no cambia. No es finalista.
+`submission_sonda_santander.csv` dio **1418,34102**. El factor es **1,033** y Santander pasa de 165,9 a 171,4. Kaggle confirmó **1221,71529**. El primer semestre no cambia. Va en `submission_santander.csv` y `submission_santander_seleccion_2.csv`.
+
+## Huila, ya calificada
+
+`submission_sonda_huila.csv` dio **1329,83604**. El ×1,5 iba hacia arriba y el tablero pide **0,553**: Huila pasa de 65,8 a 36,4. Kaggle confirmó **1190,74829**. El primer semestre no cambia: copiar el nivel empeora 2020 en 98 puntos. Va en `submission_huila.csv` y `submission_huila_seleccion_2.csv`.
+
+## Cesar, ya calificada
+
+`submission_sonda_cesar.csv` dio **1162,65830**. El factor es **1,456** y Cesar pasa de 64,9 a 94,6. Kaggle confirmó **1162,39485**. El primer semestre de Cesar se multiplica por 1,228. Va en `submission_cesar.csv` y `submission_cesar_seleccion_2.csv`.
+
+## Guajira, ya calificada
+
+`submission_sonda_guajira.csv` dio **1170,31288**. El factor es **1,154** y Guajira pasa de 49,6 a 57,2. Kaggle confirmó **1160,41638**. El primer semestre no cambia: copiar el nivel empeora 2022 en 36 puntos. Va en `submission_guajira.csv` y `submission_guajira_seleccion_2.csv`.
+
+## Cundinamarca, ya calificada
+
+`submission_sonda_cundinamarca.csv` dio **1203,76053**. El ×1,5 iba hacia arriba y el tablero pide **0,791**: Cundinamarca pasa de 53,4 a 42,2. Kaggle confirmó **1156,27758** en `submission_cundinamarca.csv`. El primer semestre no cambia: copiar el nivel empeora 2016 en 72 puntos. El gemelo `submission_cundinamarca_seleccion_2.csv` tiene el mismo segundo semestre y todavía no se sube.
+
+## Sonda de Putumayo
+
+`submission_sonda_putumayo.csv` multiplica por 1,5 solo el segundo semestre de Putumayo sobre `submission_cundinamarca.csv`. El primer semestre no cambia. No es finalista.
 
 ## Qué subir
 
-La mezcla de 3170 no es finalista. Las dos finales son `submission_sucre.csv` (selección 1, Valle en 322) y `submission_sucre_seleccion_2.csv` (selección 2, Valle en 127). El público estimado es **1222,72**. El segundo semestre es el mismo. En el primero cambian Tolima, Meta y Sucre.
+La mezcla de 3170 no es finalista. Las dos finales son `submission_cundinamarca.csv` (selección 1, Valle en 322, ya en el tablero con **1156,27758**) y `submission_cundinamarca_seleccion_2.csv` (selección 2, Valle en 127, pendiente). El segundo semestre es el mismo. En el primero cambian Tolima, Meta, Sucre y Cesar. La sonda de Putumayo también está pendiente.

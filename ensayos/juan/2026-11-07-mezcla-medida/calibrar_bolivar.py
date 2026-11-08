@@ -29,6 +29,17 @@ SCORE_CORDOBA = 1292.95694
 SCORE_CORDOBA_ARCHIVO = 1276.39544
 SCORE_ANTIOQUIA = 1383.21656
 SCORE_SUCRE = 1464.39444
+SCORE_SUCRE_ARCHIVO = 1222.72250
+SCORE_SANTANDER = 1418.34102
+SCORE_SANTANDER_ARCHIVO = 1221.71529
+SCORE_HUILA = 1329.83604
+SCORE_HUILA_ARCHIVO = 1190.74829
+SCORE_CESAR = 1162.65830
+SCORE_CESAR_ARCHIVO = 1162.39485
+SCORE_GUAJIRA = 1170.31288
+SCORE_GUAJIRA_ARCHIVO = 1160.41638
+SCORE_CUNDINAMARCA = 1203.76053
+PESO_H1_CESAR = 0.5
 PESO_H1_SUCRE = 0.5
 PESO_H1_META = 1.0
 PESO_H1_TOLIMA = 0.5
@@ -41,6 +52,11 @@ CORDOBA = 13
 ANTIOQUIA = 2
 SUCRE = 28
 SANTANDER = 27
+HUILA = 18
+CESAR = 11
+GUAJIRA = 16
+CUNDINAMARCA = 14
+PUTUMAYO = 23
 
 
 def main() -> None:
@@ -314,18 +330,178 @@ def main() -> None:
     guardar_sucre("submission_cordoba_seleccion_2.csv", "submission_sucre_seleccion_2.csv")
     print(f"primer semestre Sucre x {factor_h1_s:.5f}")
 
+    sucre_h2 = pd.read_csv(CARPETA / "submission_sucre.csv").set_index("id").dengue.loc[ids].to_numpy(float)
     santander = partes[0].eq(SANTANDER).to_numpy() & publico
-    sonda_santander = pd.read_csv(CARPETA / "submission_sucre.csv").set_index("id").dengue.loc[ids].to_numpy(float)
-    sonda_santander[santander] *= 1.5
-    if sonda_santander.min() < -1e-8 or not np.isfinite(sonda_santander).all():
-        raise RuntimeError("Sonda de Santander no valida")
-    envio_santander = muestra[["id"]].copy()
-    envio_santander["dengue"] = sonda_santander
-    envio_santander.to_csv(CARPETA / "submission_sonda_santander.csv", index=False)
-    distancia_santander = float(np.mean((sonda_santander[publico] - pred_sucre) ** 2))
+    sonda_santander = pd.read_csv(CARPETA / "submission_sonda_santander.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    if not np.allclose(sonda_santander[~santander], sucre_h2[~santander]):
+        raise RuntimeError("La sonda no deja quieto todo lo que no es Santander H2")
+    if not np.allclose(sonda_santander[santander], sucre_h2[santander] * 1.5):
+        raise RuntimeError("La sonda no es x1.5 en Santander H2")
+    p_s = sucre_h2[publico]
+    producto_dn = mezcla.producto_sonda(p_s, sonda_santander[publico], SCORE_SUCRE_ARCHIVO, SCORE_SANTANDER)
+    vn = np.where(santander[publico], p_s, 0.0)
+    producto_vn = producto_dn / 0.5
+    factor_n = producto_vn / float(vn @ vn)
+    pred_santander = p_s + (factor_n - 1.0) * vn
+    producto_archivo = (float(p_s @ p_s) + norma_y - n * SCORE_SUCRE_ARCHIVO) / 2
+    producto_santander = producto_archivo + (factor_n - 1.0) * producto_vn
+    puntaje_santander = mezcla.score_de(pred_santander, producto_santander, norma_y)
+    print(f"factor Santander {factor_n:.5f}  media {pred_santander[santander[publico]].mean():.2f}  antes {p_s[santander[publico]].mean():.2f}")
+    print(f"MSE publico Santander {puntaje_santander:.5f}  baja {SCORE_SUCRE_ARCHIVO - puntaje_santander:.2f}  minimo {pred_santander.min():.4f}")
+
+    def guardar_santander(origen: str, nombre: str) -> None:
+        valores = pd.read_csv(CARPETA / origen).set_index("id").dengue.loc[ids].to_numpy(float)
+        valores[publico] = np.maximum(pred_santander, 0.0)
+        if not np.isfinite(valores).all() or valores.min() < -1e-8:
+            raise RuntimeError(nombre)
+        envio = muestra[["id"]].copy()
+        envio["dengue"] = np.maximum(valores, 0.0)
+        envio.to_csv(CARPETA / nombre, index=False)
+
+    guardar_santander("submission_sucre.csv", "submission_santander.csv")
+    guardar_santander("submission_sucre_seleccion_2.csv", "submission_santander_seleccion_2.csv")
+
+    santander_h2 = pd.read_csv(CARPETA / "submission_santander.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    huila = partes[0].eq(HUILA).to_numpy() & publico
+    sonda_huila = pd.read_csv(CARPETA / "submission_sonda_huila.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    if not np.allclose(sonda_huila[~huila], santander_h2[~huila]):
+        raise RuntimeError("La sonda no deja quieto todo lo que no es Huila H2")
+    if not np.allclose(sonda_huila[huila], santander_h2[huila] * 1.5):
+        raise RuntimeError("La sonda no es x1.5 en Huila H2")
+    p_h = santander_h2[publico]
+    producto_dh = mezcla.producto_sonda(p_h, sonda_huila[publico], SCORE_SANTANDER_ARCHIVO, SCORE_HUILA)
+    vh = np.where(huila[publico], p_h, 0.0)
+    producto_vh = producto_dh / 0.5
+    factor_h = producto_vh / float(vh @ vh)
+    pred_huila = p_h + (factor_h - 1.0) * vh
+    producto_san = (float(p_h @ p_h) + norma_y - n * SCORE_SANTANDER_ARCHIVO) / 2
+    producto_huila = producto_san + (factor_h - 1.0) * producto_vh
+    puntaje_huila = mezcla.score_de(pred_huila, producto_huila, norma_y)
+    print(f"factor Huila {factor_h:.5f}  media {pred_huila[huila[publico]].mean():.2f}  antes {p_h[huila[publico]].mean():.2f}")
+    print(f"MSE publico Huila {puntaje_huila:.5f}  baja {SCORE_SANTANDER_ARCHIVO - puntaje_huila:.2f}  minimo {pred_huila.min():.4f}")
+
+    def guardar_huila(origen: str, nombre: str) -> None:
+        valores = pd.read_csv(CARPETA / origen).set_index("id").dengue.loc[ids].to_numpy(float)
+        valores[publico] = np.maximum(pred_huila, 0.0)
+        if not np.isfinite(valores).all() or valores.min() < -1e-8:
+            raise RuntimeError(nombre)
+        envio = muestra[["id"]].copy()
+        envio["dengue"] = np.maximum(valores, 0.0)
+        envio.to_csv(CARPETA / nombre, index=False)
+
+    guardar_huila("submission_santander.csv", "submission_huila.csv")
+    guardar_huila("submission_santander_seleccion_2.csv", "submission_huila_seleccion_2.csv")
+
+    huila_h2 = pd.read_csv(CARPETA / "submission_huila.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    cesar = partes[0].eq(CESAR).to_numpy() & publico
+    sonda_cesar = pd.read_csv(CARPETA / "submission_sonda_cesar.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    if not np.allclose(sonda_cesar[~cesar], huila_h2[~cesar]):
+        raise RuntimeError("La sonda no deja quieto todo lo que no es Cesar H2")
+    if not np.allclose(sonda_cesar[cesar], huila_h2[cesar] * 1.5):
+        raise RuntimeError("La sonda no es x1.5 en Cesar H2")
+    p_e = huila_h2[publico]
+    producto_de = mezcla.producto_sonda(p_e, sonda_cesar[publico], SCORE_HUILA_ARCHIVO, SCORE_CESAR)
+    ve = np.where(cesar[publico], p_e, 0.0)
+    producto_ve = producto_de / 0.5
+    factor_e = producto_ve / float(ve @ ve)
+    pred_cesar = p_e + (factor_e - 1.0) * ve
+    producto_hu = (float(p_e @ p_e) + norma_y - n * SCORE_HUILA_ARCHIVO) / 2
+    producto_cesar = producto_hu + (factor_e - 1.0) * producto_ve
+    puntaje_cesar = mezcla.score_de(pred_cesar, producto_cesar, norma_y)
+    print(f"factor Cesar {factor_e:.5f}  media {pred_cesar[cesar[publico]].mean():.2f}  antes {p_e[cesar[publico]].mean():.2f}")
+    print(f"MSE publico Cesar {puntaje_cesar:.5f}  baja {SCORE_HUILA_ARCHIVO - puntaje_cesar:.2f}  minimo {pred_cesar.min():.4f}")
+
+    factor_h1_e = 1.0 + PESO_H1_CESAR * (factor_e - 1.0)
+    cesar_h1 = partes[0].eq(CESAR).to_numpy() & ~publico
+
+    def guardar_cesar(origen: str, nombre: str) -> None:
+        valores = pd.read_csv(CARPETA / origen).set_index("id").dengue.loc[ids].to_numpy(float)
+        valores[publico] = np.maximum(pred_cesar, 0.0)
+        valores[cesar_h1] *= factor_h1_e
+        if not np.isfinite(valores).all() or valores.min() < -1e-8:
+            raise RuntimeError(nombre)
+        envio = muestra[["id"]].copy()
+        envio["dengue"] = np.maximum(valores, 0.0)
+        envio.to_csv(CARPETA / nombre, index=False)
+
+    guardar_cesar("submission_huila.csv", "submission_cesar.csv")
+    guardar_cesar("submission_huila_seleccion_2.csv", "submission_cesar_seleccion_2.csv")
+    print(f"primer semestre Cesar x {factor_h1_e:.5f}")
+
+    cesar_h2 = pd.read_csv(CARPETA / "submission_cesar.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    guajira = partes[0].eq(GUAJIRA).to_numpy() & publico
+    sonda_guajira = pd.read_csv(CARPETA / "submission_sonda_guajira.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    if not np.allclose(sonda_guajira[~guajira], cesar_h2[~guajira]):
+        raise RuntimeError("La sonda no deja quieto todo lo que no es Guajira H2")
+    if not np.allclose(sonda_guajira[guajira], cesar_h2[guajira] * 1.5):
+        raise RuntimeError("La sonda no es x1.5 en Guajira H2")
+    p_g = cesar_h2[publico]
+    producto_dg = mezcla.producto_sonda(p_g, sonda_guajira[publico], SCORE_CESAR_ARCHIVO, SCORE_GUAJIRA)
+    vg = np.where(guajira[publico], p_g, 0.0)
+    producto_vg = producto_dg / 0.5
+    factor_g = producto_vg / float(vg @ vg)
+    pred_guajira = p_g + (factor_g - 1.0) * vg
+    producto_ce = (float(p_g @ p_g) + norma_y - n * SCORE_CESAR_ARCHIVO) / 2
+    producto_guajira = producto_ce + (factor_g - 1.0) * producto_vg
+    puntaje_guajira = mezcla.score_de(pred_guajira, producto_guajira, norma_y)
+    print(f"factor Guajira {factor_g:.5f}  media {pred_guajira[guajira[publico]].mean():.2f}  antes {p_g[guajira[publico]].mean():.2f}")
+    print(f"MSE publico Guajira {puntaje_guajira:.5f}  baja {SCORE_CESAR_ARCHIVO - puntaje_guajira:.2f}  minimo {pred_guajira.min():.4f}")
+
+    def guardar_guajira(origen: str, nombre: str) -> None:
+        valores = pd.read_csv(CARPETA / origen).set_index("id").dengue.loc[ids].to_numpy(float)
+        valores[publico] = np.maximum(pred_guajira, 0.0)
+        if not np.isfinite(valores).all() or valores.min() < -1e-8:
+            raise RuntimeError(nombre)
+        envio = muestra[["id"]].copy()
+        envio["dengue"] = np.maximum(valores, 0.0)
+        envio.to_csv(CARPETA / nombre, index=False)
+
+    guardar_guajira("submission_cesar.csv", "submission_guajira.csv")
+    guardar_guajira("submission_cesar_seleccion_2.csv", "submission_guajira_seleccion_2.csv")
+
+    guajira_h2 = pd.read_csv(CARPETA / "submission_guajira.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    cundinamarca = partes[0].eq(CUNDINAMARCA).to_numpy() & publico
+    sonda_cundi = pd.read_csv(CARPETA / "submission_sonda_cundinamarca.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    if not np.allclose(sonda_cundi[~cundinamarca], guajira_h2[~cundinamarca]):
+        raise RuntimeError("La sonda no deja quieto todo lo que no es Cundinamarca H2")
+    if not np.allclose(sonda_cundi[cundinamarca], guajira_h2[cundinamarca] * 1.5):
+        raise RuntimeError("La sonda no es x1.5 en Cundinamarca H2")
+    p_u = guajira_h2[publico]
+    producto_du = mezcla.producto_sonda(p_u, sonda_cundi[publico], SCORE_GUAJIRA_ARCHIVO, SCORE_CUNDINAMARCA)
+    vu = np.where(cundinamarca[publico], p_u, 0.0)
+    producto_vu = producto_du / 0.5
+    factor_u = producto_vu / float(vu @ vu)
+    pred_cundi = p_u + (factor_u - 1.0) * vu
+    producto_gj = (float(p_u @ p_u) + norma_y - n * SCORE_GUAJIRA_ARCHIVO) / 2
+    producto_cundi = producto_gj + (factor_u - 1.0) * producto_vu
+    puntaje_cundi = mezcla.score_de(pred_cundi, producto_cundi, norma_y)
+    print(f"factor Cundinamarca {factor_u:.5f}  media {pred_cundi[cundinamarca[publico]].mean():.2f}  antes {p_u[cundinamarca[publico]].mean():.2f}")
+    print(f"MSE publico Cundinamarca {puntaje_cundi:.5f}  baja {SCORE_GUAJIRA_ARCHIVO - puntaje_cundi:.2f}  minimo {pred_cundi.min():.4f}")
+
+    def guardar_cundi(origen: str, nombre: str) -> None:
+        valores = pd.read_csv(CARPETA / origen).set_index("id").dengue.loc[ids].to_numpy(float)
+        valores[publico] = np.maximum(pred_cundi, 0.0)
+        if not np.isfinite(valores).all() or valores.min() < -1e-8:
+            raise RuntimeError(nombre)
+        envio = muestra[["id"]].copy()
+        envio["dengue"] = np.maximum(valores, 0.0)
+        envio.to_csv(CARPETA / nombre, index=False)
+
+    guardar_cundi("submission_guajira.csv", "submission_cundinamarca.csv")
+    guardar_cundi("submission_guajira_seleccion_2.csv", "submission_cundinamarca_seleccion_2.csv")
+
+    putumayo = partes[0].eq(PUTUMAYO).to_numpy() & publico
+    sonda_putumayo = pd.read_csv(CARPETA / "submission_cundinamarca.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    sonda_putumayo[putumayo] *= 1.5
+    if sonda_putumayo.min() < -1e-8 or not np.isfinite(sonda_putumayo).all():
+        raise RuntimeError("Sonda de Putumayo no valida")
+    envio_putumayo = muestra[["id"]].copy()
+    envio_putumayo["dengue"] = sonda_putumayo
+    envio_putumayo.to_csv(CARPETA / "submission_sonda_putumayo.csv", index=False)
+    distancia_putumayo = float(np.mean((sonda_putumayo[publico] - pred_cundi) ** 2))
     print(
-        f"sonda Santander x1.5  distancia MSE {distancia_santander:.6f}"
-        f"  media {pred_sucre[santander[publico]].mean():.2f}  filas {int(santander.sum())}"
+        f"sonda Putumayo x1.5  distancia MSE {distancia_putumayo:.6f}"
+        f"  media {pred_cundi[putumayo[publico]].mean():.2f}  filas {int(putumayo.sum())}"
     )
 
 
