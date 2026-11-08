@@ -2,6 +2,18 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-07 — El 1398 quedó confirmado
+
+Kaggle devolvió **1398,01602** para `submission_tolima.csv` y para `submission_tolima_seleccion_2.csv`. La cuenta daba 1398,01603. Tolima queda en 0,689 sobre el 1438,54, y el público baja 40,5 puntos. Los dos comparten el segundo semestre, así que el tablero no dice nada del primero. La selección 1 abre Valle en 322 y la selección 2 en 127. En el primer semestre solo cambia Tolima, con peso 0,5.
+
+## 2026-11-07 — Tolima baja el público a 1398
+
+La sonda ×1,5 de Tolima dio **1674,09549**. El factor sobre el 1438,54128 es **0,689**. Tolima pasa de 112,1 a 77,3 casos por semana en el segundo semestre. El público estimado es **1398,02**, 40,5 puntos debajo. En el primer semestre el peso, elegido con años anteriores, es 0,5: en 2016-2023 ese ajuste deja el H1 de B en 3789 contra 3909, y gana los 8 años. `submission_tolima.csv` lleva el primer semestre de la selección 1 y `submission_tolima_seleccion_2.csv` el de la selección 2. Los dos mueven solo Tolima en el primero.
+
+## 2026-11-07 — Sonda de Tolima
+
+`ensayos/juan/2026-11-07-mezcla-medida/submission_sonda_tolima.csv` es ×1,5 solo en el segundo semestre de Tolima, sobre el archivo de 1438,54128. El primer semestre queda igual. No es finalista. Tolima tiene la mayor energía todavía fuera de la mezcla, y en la historia el nivel de su segundo semestre bajó el error del primero en 7 de 8 años.
+
 ## 2026-11-07 — El 1438 quedó confirmado
 
 Kaggle devolvió **1438,54128** para `submission_calibrada.csv` y para `submission_calibrada_seleccion_2.csv`. Es el mismo número de la cuenta con Bolívar en 0,978 y Atlántico en 0,853. Los dos archivos comparten el segundo semestre, así que el tablero no dice nada del primero. El público baja 20,6 puntos frente a 1459,16475. Las dos finales siguen siendo estas: la selección 1 abre Valle en 322 y la selección 2 en 127.

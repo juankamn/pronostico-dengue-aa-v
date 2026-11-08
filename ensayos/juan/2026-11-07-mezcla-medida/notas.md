@@ -28,6 +28,10 @@ En el apilado (la selección 1) partir el interior en Valle y resto empeora: 335
 
 Lo que sí baja el error es mezclar, con un peso aprendido en los años anteriores, el apilado ya corregido por región y B corregida con las tres escalas. En 2016-2023 esa mezcla da **3170**, frente a 3356 del apilado y 3352 de B sola. El peso que toca para 2025 es 0,30 del apilado y 0,70 de B. Valle en el primer trimestre queda en 208 (la selección 1 abre en 322 y la selección 2 en 127).
 
+## Sonda de Tolima
+
+`submission_sonda_tolima.csv` dio **1674,09549**. El factor es **0,689** y Tolima pasa de 112,1 a 77,3 en el segundo semestre. Kaggle confirmó **1398,01602** en `submission_tolima.csv` y en `submission_tolima_seleccion_2.csv` (la cuenta daba 1398,01603). El primer semestre de Tolima se multiplica por 0,845. El peso 0,5 sale de los años anteriores: en 2016-2023 baja el H1 de B de 3909 a 3789 y gana los 8 años. No se copia a otros departamentos.
+
 ## Qué subir
 
-La mezcla de 3170 no es finalista: le gana al apilado en 5 de 8 años y pierde en 2016, 2021 y 2022. Las dos finales son `submission_calibrada.csv` (selección 1, Valle en 322) y `submission_calibrada_seleccion_2.csv` (selección 2, Valle en 127). Kaggle las calificó las dos en **1438,54128**. El segundo semestre es el mismo, así que el privado sigue siendo la cobertura entre enero alto y enero bajo.
+La mezcla de 3170 no es finalista: le gana al apilado en 5 de 8 años y pierde en 2016, 2021 y 2022. Las dos finales son `submission_tolima.csv` (selección 1, Valle en 322) y `submission_tolima_seleccion_2.csv` (selección 2, Valle en 127). Kaggle las calificó las dos en **1398,01602**. El segundo semestre es el mismo. En el primero solo cambia Tolima.

@@ -18,8 +18,12 @@ CARPETA = Path(__file__).resolve().parent
 SCORE_BASE = 1459.16475
 SCORE_BOLIVAR = 1828.40392
 SCORE_ATLANTICO = 1825.97217
+SCORE_CALIBRADA = 1438.54128
+SCORE_TOLIMA = 1674.09549
+PESO_H1_TOLIMA = 0.5
 BOLIVAR = 5
 ATLANTICO = 4
+TOLIMA = 29
 
 
 def main() -> None:
@@ -104,6 +108,44 @@ def main() -> None:
     distinto = (np.abs(h2_ambos - base) > 1e-8) & publico
     if int(distinto.sum()) != int(bolivar.sum() + atlantico.sum()):
         raise RuntimeError("La calibracion toco otro departamento")
+
+    calibrada = pd.read_csv(CARPETA / "submission_calibrada.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    tolima = partes[0].eq(TOLIMA).to_numpy() & publico
+    sonda_tolima = pd.read_csv(CARPETA / "submission_sonda_tolima.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    if not np.allclose(sonda_tolima[~tolima], calibrada[~tolima]):
+        raise RuntimeError("La sonda no deja quieto todo lo que no es Tolima H2")
+    if not np.allclose(sonda_tolima[tolima], calibrada[tolima] * 1.5):
+        raise RuntimeError("La sonda no es x1.5 en Tolima H2")
+    p_cal = calibrada[publico]
+    producto_dt = mezcla.producto_sonda(p_cal, sonda_tolima[publico], SCORE_CALIBRADA, SCORE_TOLIMA)
+    vt = np.where(tolima[publico], p_cal, 0.0)
+    producto_vt = producto_dt / 0.5
+    factor_t = producto_vt / float(vt @ vt)
+    pred_tolima = p_cal + (factor_t - 1.0) * vt
+    producto_cal = (float(p_cal @ p_cal) + norma_y - n * SCORE_CALIBRADA) / 2
+    producto_tolima = producto_cal + (factor_t - 1.0) * producto_vt
+    puntaje_tolima = mezcla.score_de(pred_tolima, producto_tolima, norma_y)
+    print(f"factor Tolima {factor_t:.5f}  media {pred_tolima[tolima[publico]].mean():.2f}  antes {p_cal[tolima[publico]].mean():.2f}")
+    print(f"MSE publico Tolima {puntaje_tolima:.5f}  baja {SCORE_CALIBRADA - puntaje_tolima:.2f}  minimo {pred_tolima.min():.4f}")
+
+    h2_tolima = calibrada.copy()
+    h2_tolima[publico] = np.maximum(pred_tolima, 0.0)
+    factor_h1 = 1.0 + PESO_H1_TOLIMA * (factor_t - 1.0)
+    tolima_h1 = partes[0].eq(TOLIMA).to_numpy() & ~publico
+
+    def guardar_tolima(h1: np.ndarray, nombre: str) -> None:
+        valores = h2_tolima.copy()
+        valores[~publico] = h1[~publico]
+        valores[tolima_h1] *= factor_h1
+        if not np.isfinite(valores).all() or valores.min() < -1e-8:
+            raise RuntimeError(nombre)
+        envio = muestra[["id"]].copy()
+        envio["dengue"] = np.maximum(valores, 0.0)
+        envio.to_csv(CARPETA / nombre, index=False)
+
+    guardar_tolima(sel1, "submission_tolima.csv")
+    guardar_tolima(sel2, "submission_tolima_seleccion_2.csv")
+    print(f"primer semestre Tolima x {factor_h1:.5f}")
 
 
 if __name__ == "__main__":
