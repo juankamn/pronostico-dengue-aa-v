@@ -491,7 +491,9 @@ def main() -> None:
     guardar_cundi("submission_guajira_seleccion_2.csv", "submission_cundinamarca_seleccion_2.csv")
 
     putumayo = partes[0].eq(PUTUMAYO).to_numpy() & publico
-    sonda_putumayo = pd.read_csv(CARPETA / "submission_cundinamarca.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    sonda_putumayo = pd.read_csv(CARPETA / "submission_cundinamarca_seleccion_2.csv").set_index("id").dengue.loc[ids].to_numpy(float)
+    if not np.allclose(sonda_putumayo[publico], pred_cundi):
+        raise RuntimeError("La seleccion 2 no trae el segundo semestre calibrado")
     sonda_putumayo[putumayo] *= 1.5
     if sonda_putumayo.min() < -1e-8 or not np.isfinite(sonda_putumayo).all():
         raise RuntimeError("Sonda de Putumayo no valida")
@@ -500,7 +502,7 @@ def main() -> None:
     envio_putumayo.to_csv(CARPETA / "submission_sonda_putumayo.csv", index=False)
     distancia_putumayo = float(np.mean((sonda_putumayo[publico] - pred_cundi) ** 2))
     print(
-        f"sonda Putumayo x1.5  distancia MSE {distancia_putumayo:.6f}"
+        f"sonda Putumayo x1.5 sobre seleccion 2  distancia MSE {distancia_putumayo:.6f}"
         f"  media {pred_cundi[putumayo[publico]].mean():.2f}  filas {int(putumayo.sum())}"
     )
 

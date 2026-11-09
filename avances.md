@@ -2,15 +2,83 @@
 
 Resumen para no abrir cada ensayo. Lo nuevo se agrega arriba.
 
+## 2026-11-08 — Guainia cierra la lista en 962
+
+La sonda ×1,5 de Guainia dio **961,80446**. El factor es **0,296**: Guainia pasa de 0,8 a 0,2 y el público estimado queda en **961,77**, una centésima debajo de Vaupes. En el primer semestre el peso es 1 y Guainia se multiplica por 0,296: 2016-2023 baja de 3909,4 a 3909,3 y ningún año empeora. No queda ningún departamento. Los dos finales comparten ese segundo semestre: `submission_guainia.csv` (Valle en 322) y `submission_guainia_seleccion_2.csv` (Valle en 127).
+
+## 2026-11-08 — Vaupes baja a 0,5 y el público queda en 962
+
+Kaggle confirmó Vichada en **961,80425**. La sonda ×1,5 de Vaupes dio **961,85112**. El factor es **0,375**: Vaupes pasa de 1,3 a 0,5 y el público estimado queda en **961,78**, dos centésimas debajo. El limpio no se sube. En el primer semestre el peso es 0,75 y Vaupes se multiplica por 0,532: 2016-2023 baja de 3909,4 a 3909,3 y el peor año sube 0,2. La sonda siguiente es Guainia, dentro de la selección 2. No es finalista. Es el último departamento.
+
+## 2026-11-08 — Vichada sube a 9 y el público queda en 962
+
+La sonda ×1,5 de Vichada dio **962,09030**, sobre el 962,64 de Caldas. El factor es **2,205**: Vichada pasa de 4,2 a 9,2 y el público estimado queda en **961,80**, 0,84 debajo de Caldas y 1,9 debajo del final de Choco. El archivo también trae Guaviare y Caldas. En el primer semestre el peso es 0,75 y Vichada se multiplica por 1,903: 2016-2023 baja de 3909,4 a 3909,2 y ningún año empeora. La sonda siguiente es Vaupes, dentro de la selección 2. No es finalista. Después queda Guainia.
+
+## 2026-11-08 — Caldas baja a 3 y el público queda en 963
+
+La sonda ×1,5 de Caldas dio **964,30352**, sobre el 963,11 de Guaviare. El factor es **0,430**: Caldas pasa de 6,7 a 2,9 y el público estimado queda en **962,64**, 0,47 debajo. El limpio no se sube. En el primer semestre el peso es 0,5 y Caldas se multiplica por 0,715: 2016-2023 baja de 3909,4 a 3909,3 y el peor año sube 0,7. La sonda siguiente es Vichada, dentro de la selección 2. No es finalista.
+
+## 2026-11-08 — Guaviare sube a 11 y el público queda en 963
+
+La sonda ×1,5 de Guaviare dio **963,12784**, sobre el 963,67 de Amazonas. El factor es **1,600**: Guaviare pasa de 6,9 a 11,1 y el público estimado queda en **963,11**, 0,56 debajo. La sonda ya traía casi toda esa baja y el limpio no se sube. En el primer semestre el peso es 0,75 y Guaviare se multiplica por 1,450: 2016-2023 baja de 3909,4 a 3908,4 y el peor año sube 0,5. La sonda siguiente es Caldas, dentro de la selección 2. No es finalista.
+
+## 2026-11-08 — Amazonas ya estaba en el nivel
+
+La sonda ×1,5 de Amazonas dio **964,08840**, sobre el 963,68 de Boyaca. El factor es **1,032**: Amazonas pasa de 7,6 a 7,9 y el público estimado queda en **963,67**, dos milésimas debajo. El limpio no se sube. El primer semestre no se toca: el peso elegido año a año empeora 2019 en 16 puntos y el promedio de 2016-2023 queda en 3910,9, frente a 3909,4 de B. La sonda siguiente es Guaviare, dentro de la selección 2. No es finalista.
+
+## 2026-11-08 — Boyaca ya estaba en el nivel
+
+Kaggle confirmó Choco en **963,69475**. La sonda ×1,5 de Boyaca dio **964,63791**. El factor es **0,919**: Boyaca pasa de 9,3 a 8,6 y el público estimado queda en **963,68**, dos centésimas debajo. El limpio no se sube. En el primer semestre el peso es 1 y Boyaca se multiplica por 0,919: 2016-2023 baja de 3909 a 3906 y el peor año sube 0,6. La sonda siguiente es Amazonas, dentro de la selección 2. No es finalista.
+
+## 2026-11-08 — Choco sube a 22 y el público queda en 964
+
+Kaggle confirmó Narino en **968,69500**. La sonda ×1,5 de Choco dio **965,57514**. El factor es **2,293**: Choco pasa de 9,5 a 21,9 y el público estimado queda en **963,69**, 5 debajo. En el primer semestre el peso es 0,25 y Choco se multiplica por 1,323: 2016-2023 baja de 3909,4 a 3908,8 y el peor año sube 1,5. La sonda siguiente es Boyaca, dentro de la selección 2. No es finalista.
+
+## 2026-11-08 — Narino sube a 19 y el público queda en 969
+
+Kaggle confirmó Risaralda en **969,64615**. La sonda ×1,5 de Narino dio **968,76129**. El factor es **1,396**: Narino pasa de 13,6 a 19,0 y el público estimado queda en **968,69**, 0,95 debajo. La sonda ya traía casi toda esa baja. El primer semestre no se toca: el peso elegido año a año empeora 2023 en 14 puntos y el promedio de 2016-2023 queda en 3910,6, frente a 3909,4 de B. La sonda siguiente es Choco, dentro de la selección 2. No es finalista. Los ocho que quedan tienen pocos casos.
+
+## 2026-11-08 — Risaralda baja a 11 y el público queda en 970
+
+Kaggle confirmó Cauca en **970,92550**. La sonda ×1,5 de Risaralda dio **977,20048**. El factor es **0,650**: Risaralda pasa de 17,3 a 11,2 y el público estimado queda en **969,65**, 1,3 debajo. En el primer semestre el peso es 1 y Risaralda se multiplica por 0,650: 2016-2023 baja de 3909 a 3906 y el peor año sube 0,7. La sonda siguiente es Narino, dentro de la selección 2. No es finalista.
+
+## 2026-11-08 — Cauca baja a 12 y el público queda en 971
+
+Kaggle confirmó Quindio en **973,14988**. La sonda ×1,5 de Cauca dio **982,33246**. El factor es **0,605**: Cauca pasa de 20,2 a 12,2 y el público estimado queda en **970,93**, 2,2 debajo. El primer semestre no se toca: el peso elegido año a año empeora 2023 en 39 puntos. La sonda siguiente es Risaralda, dentro de la selección 2. No es finalista.
+
+## 2026-11-08 — Quindio baja a 11 y el público queda en 973
+
+Kaggle confirmó Arauca en **976,60859**. La sonda ×1,5 de Quindio dio **987,76571**. El factor es **0,526**: Quindio pasa de 21,6 a 11,4 y el público estimado queda en **973,15**, 3,5 debajo. El primer semestre no se toca: el peso elegido año a año empeora 2016 en 10 puntos y el promedio de 2016-2023 queda en 3909,5, frente a 3909,4 de B. La sonda siguiente es Cauca, dentro de la selección 2. No es finalista.
+
+## 2026-11-08 — Arauca sube a 36 y el público queda en 977
+
+La sonda ×1,5 de Arauca dio **976,63977**. El factor es **1,542**: Arauca pasa de 23,4 a 36,0 y el público estimado queda en **976,61**, 5,3 debajo del 981,88 de Caqueta. En el primer semestre el peso es 0,75 y Arauca se multiplica por 1,406: 2016-2023 baja de 3909 a 3905 y el peor año sube 0,02. La sonda siguiente es Quindio, dentro de la selección 2. No es finalista.
+
+## 2026-11-08 — Caqueta baja a 20 y el público queda en 982
+
+Kaggle confirmó Magdalena en **982,31573**. La sonda ×1,5 de Caqueta dio **989,56434**. El factor es **0,844**: Caqueta pasa de 23,4 a 19,7 y el público estimado queda en **981,88**, 0,44 debajo. El limpio no se sube. En el primer semestre el peso es 0,5 y Caqueta se multiplica por 0,922: 2016-2023 baja de 3909 a 3908 y el peor año sube 0,2. La sonda siguiente es Arauca, dentro de la selección 2. No es finalista.
+
+## 2026-11-08 — Magdalena sube a 102 y el público queda en 982
+
+Kaggle confirmó Casanare en **1143,95494**. La sonda ×1,5 de Magdalena dio **1080,79285**. El factor es **3,278**: Magdalena pasa de 31,0 a 101,6 y el público estimado queda en **982,32**, 162 puntos debajo. El primer semestre no se toca: copiar el 3,278 no mejora el histórico. La sonda siguiente es Caqueta, dentro de la selección 2. No es finalista.
+
+## 2026-11-08 — Casanare baja a 18 y el público queda en 1144
+
+Kaggle confirmó Putumayo en **1154,63701**. La sonda ×1,5 de Casanare dio **1186,12303**. El factor es **0,493**: Casanare pasa de 35,8 a 17,6 y el público estimado queda en **1143,95**, 11 puntos debajo. El primer semestre de Casanare se multiplica por 0,493. En 2016-2023 el promedio baja de 3909 a 3872. Pierde 2021 por 4 y gana 2019 por 214. La sonda siguiente es Magdalena, dentro de la selección 2. No es finalista. En el público hay equipos en 740 y 760. Lo que falta de esta escalera son niveles de departamentos chicos y no recorre esa distancia.
+
+## 2026-11-08 — Putumayo baja a 31 y el público queda en 1155
+
+La sonda de Putumayo, con el primer semestre de la selección 2, dio **1177,25208**. El ×1,5 se pasó: el factor es **0,816**. Putumayo pasa de 37,9 a 30,9 y el público estimado queda en **1154,64**, 1,6 puntos debajo de 1156,28. En el primer semestre el peso es 0,75, así que Putumayo se multiplica por 0,862. En 2016-2023 el promedio baja de 3909 a 3908 y el peor año pierde 2,8. Los archivos están en `ensayos/juan/2026-11-08-sondas/`. Se sube el limpio `submission_putumayo.csv` y `submission_sonda_casanare.csv`, que lleva la selección 2 y Casanare en ×1,5. La sonda no es finalista. Si Casanare ya estaba bien, el público sube unos 10 puntos.
+
 ## 2026-11-08 — Relevo: faltan 17 sondas
 
 Juan se quedó sin envíos. Otra persona puede seguir desde aquí. El público vigente es `ensayos/juan/2026-11-07-mezcla-medida/submission_cundinamarca.csv`, confirmado en **1156,27758**. El gemelo `submission_cundinamarca_seleccion_2.csv` (Valle en 127 en el primer semestre) todavía no está en el tablero. El segundo semestre de los dos es el mismo.
 
-La sonda lista para subir es `submission_sonda_putumayo.csv`. Multiplica por 1,5 solo el segundo semestre de Putumayo (id 23) sobre el archivo de 1156,28. El primer semestre no cambia. No es finalista. Si Putumayo ya estaba bien, el público sube unos 12 puntos.
+La sonda lista para subir es `submission_sonda_putumayo.csv`. Lleva el primer semestre de la selección 2 (Valle en 127) y, en el segundo, el archivo de 1156,28 con Putumayo (id 23) en ×1,5. No es finalista. Si Putumayo ya estaba bien, el público sube unos 12 puntos. El gemelo limpio no se sube: la sonda ya ocupa ese cupo. Al cerrar la lista se sube una selección 2 limpia, con el mejor segundo semestre y sin ×1,5.
 
 Al llegar el puntaje, el factor sale con la misma cuenta de `calibrar_bolivar.py`: `producto_sonda` en `ejecutar.py`, usando **1156,27758** como puntaje de la base. La sonda ya puntuada se lee y se comprueba; no se vuelve a escribir. El primer semestre de ese departamento se copia solo si el peso, elegido año a año en 2014-2023 con la grilla 0, 0,25, 0,5, 0,75 y 1 sobre `ensayos/juan/2026-11-04-red-dinamica-h1/b_walkforward.parquet`, no empeora un año por decenas de puntos. Pasaron Tolima (0,845), Meta (1,321), Sucre (0,777) y Cesar (1,228). El resto del primer semestre queda como en las dos selecciones de `entrega/`.
 
-Un envío mide un departamento. El factor de uno no se aplica a otro. Valle (id 30) ya se midió y no se vuelve a sondar. No hace falta reentrenar ni tocar `entrega/` ni `pipeline.py`.
+Un envío mide un departamento. Por cupo, el archivo limpio es la selección 1 y la sonda del siguiente va dentro de la selección 2. El factor de uno no se aplica a otro. Valle (id 30) ya se midió y no se vuelve a sondar. No hace falta reentrenar ni tocar `entrega/` ni `pipeline.py`.
 
 De 31 departamentos faltan 17. Cada uno es una sonda. El archivo calibrado se puede armar en local con el puntaje; subirlo solo confirma un número que la cuenta ya da. El orden, y cuánto sube el público si el nivel ya estaba bien:
 
@@ -40,7 +108,7 @@ Cuando la lista esté cerrada, un solo notebook puede reescribir toda la escaler
 
 ## 2026-11-08 — Cundinamarca baja a 42 y el público queda en 1156
 
-Kaggle confirmó `submission_cundinamarca.csv` en **1156,27758**. La sonda ×1,5 dio **1203,76053** y el factor es **0,791**: Cundinamarca pasa de 53,4 a 42,2, cuatro puntos debajo de 1160,42. El primer semestre no se toca: el peso elegido año a año empeora 2016 en 72 puntos y el promedio queda en 3909. Falta subir el gemelo `submission_cundinamarca_seleccion_2.csv` y la sonda de Putumayo. La sonda no es finalista.
+Kaggle confirmó `submission_cundinamarca.csv` en **1156,27758**. La sonda ×1,5 dio **1203,76053** y el factor es **0,791**: Cundinamarca pasa de 53,4 a 42,2, cuatro puntos debajo de 1160,42. El primer semestre no se toca: el peso elegido año a año empeora 2016 en 72 puntos y el promedio queda en 3909.
 
 ## 2026-11-08 — Guajira sube una punta y el público queda en 1160
 
